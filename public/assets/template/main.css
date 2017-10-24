@@ -11795,6 +11795,9 @@ td.uk-text-break {
 .pagetitle--white {
   color: #fff;
 }
+.header-substrate {
+  height: 57px;
+}
 .breadcrumb {
   padding: 31px 0 27px;
   margin-bottom: 54px;
@@ -11852,15 +11855,6 @@ td.uk-text-break {
 }
 .breadcrumb--white .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
   color: #fff;
-}
-.substrate {
-  height: 761px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f7f7f4;
-  z-index: -100;
 }
 .button-intro {
   padding: 24px 35px 20px;
@@ -14622,6 +14616,9 @@ td.uk-text-break {
   color: #666666;
   text-decoration: underline;
 }
+.calculation__conditions label {
+  cursor: pointer;
+}
 .button-intro--calculation {
   margin-top: 27px;
 }
@@ -14633,7 +14630,7 @@ td.uk-text-break {
 }
 .article-promo {
   width: 1300px;
-  height: auto;
+  min-height: 55px;
   position: relative;
   top: 0;
   left: -100px;
@@ -14775,12 +14772,17 @@ td.uk-text-break {
   list-style-type: none;
   padding-left: 100px;
 }
+.article-content ul li {
+  position: relative;
+}
 .article-content ul li::before {
   content: '';
-  padding-left: 25px;
   width: 8px;
   height: 8px;
   background: url(img/list-marker.svg?5faf7916a8a4434c814f19d6580d7f48) 50% 50% no-repeat;
+  position: absolute;
+  top: 10px;
+  left: -25px;
 }
 @media (max-width: 639px) {
   .article-content ul {
@@ -14825,6 +14827,7 @@ td.uk-text-break {
   padding: 20px 0;
 }
 a.article-control__link {
+  margin-top: 5px;
   margin-left: 40px;
   color: #000000;
   line-height: 1;
@@ -14862,6 +14865,10 @@ a.article-control__link span {
 }
 .readmore-item__image {
   margin-bottom: 19px;
+  background-color: #000;
+}
+.readmore-item__image:hover img {
+  filter: opacity(80%);
 }
 @media (max-width: 639px) {
   .readmore-item__image {
@@ -15023,6 +15030,9 @@ a.edit {
   text-decoration: underline;
   letter-spacing: 1.4px;
   cursor: pointer;
+}
+.articles-content {
+  padding-bottom: 50px;
 }
 
 .comprasion__header {
