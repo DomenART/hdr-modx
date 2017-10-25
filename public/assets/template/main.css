@@ -14453,7 +14453,9 @@ td.uk-text-break {
   color: #fff;
 }
 .prices-cost__text h2 {
+  margin-bottom: 30px;
   font-size: 28px;
+  font-weight: 400;
   color: #fff;
 }
 .consult--prices {
@@ -14503,21 +14505,37 @@ td.uk-text-break {
   background-size: cover;
 }
 .composition-slider__control {
-  margin-right: 20px;
-  padding-bottom: 19px;
+  margin: 0 15px;
+  padding: 0 10px 10px 10px;
   border-bottom: 1px solid #e6e6e6;
+  position: relative;
+}
+.composition-slider__control .slide-bar__arrows {
+  margin-right: 115px;
+}
+.composition-slider__control svg {
+  color: #676767;
 }
 .composition-slider__counter {
-  width: 100px;
-  margin-left: 35px;
+  position: absolute;
+  right: 0;
+  top: 43%;
+  transform: translateY(-50%);
   color: #999999;
   font-size: 18px;
 }
 .composition-slider__counter span {
   font-size: 24px;
 }
-.composition-slider__active {
+span.composition-slider__active {
   color: #000;
+}
+span.composition-slider__from {
+  margin: 0 9px;
+  font-size: 18px;
+}
+span.composition-slider__total {
+  color: #999;
 }
 .prices-compostion__list {
   max-width: 450px;
@@ -14767,6 +14785,12 @@ td.uk-text-break {
 }
 .article-content a:visited {
   color: #cc99cc;
+}
+.article-content h4 {
+  padding-left: 50px;
+}
+.article-content h4 + p {
+  padding-left: 50px;
 }
 .article-content ul {
   list-style-type: none;
