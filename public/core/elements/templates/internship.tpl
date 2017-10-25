@@ -113,7 +113,7 @@
             </div>   
             <div class="feedback-item-wrapper">
                 {'pdoResources' | snippet : [
-                    'parents' => '19',
+                    'parents' => '23',
                     'limit' => '2',
                     'tpl' => '@FILE chunks/items/feedback-item.tpl',
                     'includeContent' => '1'
