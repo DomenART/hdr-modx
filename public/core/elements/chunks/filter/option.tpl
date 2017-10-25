@@ -1,1 +1,1 @@
-<option value="[[+value]]" [[+disabled]] class="[[+disabled]]">[[+title]]</option>
+<option value="[[+value]]" [[+selected]] [[+disabled]] class="[[+disabled]]">[[+title]]</option>

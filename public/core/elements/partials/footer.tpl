@@ -2,7 +2,7 @@
     <section class="footer-first">
         <div class="uk-grid" uk-grid>
             <div class="uk-width-2-5">
-                <a href="/"><img src="assets/template/img/logo-footer.png" alt="" class="footer__logo"></a>
+                <a href="/"><img src="assets/template/img/logo.png" alt="" class="footer__logo"></a>
                 <ul class="footer__rights">
                     <li><a href="#">Пользовательское соглашение</a></li>
                     <li><a href="#">Политика обработки персональных данных</a></li>

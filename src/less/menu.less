@@ -1,7 +1,7 @@
 .menu__bg {
 	position: fixed;
 	z-index: 400;
-	left: -19px;
+	left: -20px;
 	top: 50%;
 	z-index: 400;
 	height: 200px;
@@ -13,6 +13,7 @@
 
 	@media (max-width: @breakpoint-small-max) {
 		width: 110px;
+		left: -10px;
 	}
 	@media (max-width: @breakpoint-xsmall-max) {
 		display: none;
@@ -62,15 +63,15 @@
 	@media (min-width: @breakpoint-small) {
 		position: fixed;
 		z-index: 410;
-		left: 65px;
+		margin-top: -10px;
+		left: 48px;
 		top: 50%;
 		cursor: pointer;
-		margin-top: -6px;
 		transform: translateY(-50%);
 		transition: all ease .5s;
 	}
 	@media (max-width: @breakpoint-small-max) {
-		left: 12px;
+		left: 0;
 	}
 	@media (max-width: @breakpoint-xsmall-max) {
 		cursor: pointer;
@@ -81,20 +82,20 @@
 }
 .menu__toggle__logo {
 	@media (min-width: @breakpoint-small) {
-		width: 65px;
-		height: 45px;
+		width: 100px;
+		height: 65px;
 		background: url('../img/logo-small.png') no-repeat 50% 50%;
 		display: block;
-	    margin-bottom: 12px;
-	    margin-top: 5px;
+	    margin-bottom: -4px;
 	}
 }
 .menu__toggle__icon {
-    display: block;
-    width: 50px;
-    height: 50px;
-    position: relative;
-    left: 10px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	left: 50%;
+	margin-left: -25px;
     &:hover {
 		i {
 			&:nth-child(1) {
@@ -129,6 +130,7 @@
 
 	@media (max-width: @breakpoint-xsmall-max) {
 		left: 0;
+		margin-left: 0;
 	}
 }
 
@@ -250,16 +252,14 @@
 	}
 	.menu__bg {
 		left: 0;
-
 		@media (max-width: @breakpoint-small-max) {
-			left: 20px;
+			left: 30px;
 		}
 	}
 	.menu__toggle {
-		left: 85px;
-
+		left: 68px;
 		@media (max-width: @breakpoint-small-max) {
-			left: 52px;
+			left: 40px;
 		}
 		@media (max-width: @breakpoint-xsmall-max) {
 			left: 50px;
@@ -279,10 +279,10 @@
 		left: 0;
 	}
 	.menu__toggle {
-		left: 85px;
+		left: 68px;
 
 		@media (max-width: @breakpoint-small-max) {
-			left: 52px;
+			left: 40px;
 		}
 		@media (max-width: @breakpoint-xsmall-max) {
 			display: none;
@@ -302,7 +302,7 @@
 		left: 0;
 
 		@media (max-width: @breakpoint-small-max) {
-			left: 20px;
+			left: 30px;
 		}
 	}
 

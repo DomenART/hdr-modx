@@ -1,4 +1,5 @@
 {extends 'file:templates/master.tpl'}
+
 {block 'content'}
 <header>
 	<div class="header-substrate"></div>
@@ -21,8 +22,10 @@
 			'ajaxTplMore' => '@INLINE <div class="portfolio-pool__control uk-flex uk-flex-around uk-flex-center@s uk-flex-middle uk-flex-wrap"><button type="button" class="uk-button button-intro button-intro--portfolio js-portfolio-more">Показать ещё<span class="button-intro__arrow"></span></button><button type="button" class="view-all view-all--portfolio js-portfolio-more-all">показать все</button></div>',
 			'paginator' => 'pdoPage@portfolioPaginator',
 			'tplOuter' => '@FILE chunks/filter/outer.tpl',
-			'tpls' => '@FILE chunks/portfolio-item.tpl',
-			'filters' => 'publishedon:year,parent:parents',
+			'tpls' => '@FILE chunks/items/portfolio-item.tpl',
+			'filters' => 'publishedon:year,parent:categories',
+			'suggestionsRadio' => 'resource|publishedon,resource|parent',
+			'includeTVs' => 'image',
 			'tplFilter.outer.resource|publishedon' => '@FILE chunks/filter/radio.tpl',
 			'tplFilter.row.resource|publishedon' => '@FILE chunks/filter/input.tpl',
 			'tplFilter.outer.resource|parent' => '@FILE chunks/filter/select.tpl',

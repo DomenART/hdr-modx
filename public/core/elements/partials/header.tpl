@@ -1,6 +1,6 @@
 <div class="toolbar uk-flex uk-flex-middle">
     <a href="/" class="toolbar__sitename">
-        <span>House Room<br>Design</span>
+        <img src="assets/template/img/logo-toolbar.png" alt="">
     </a>
     <div class="toolbar__contacts">
         <span>Севастополь: +7(978) 070 43 33</span>

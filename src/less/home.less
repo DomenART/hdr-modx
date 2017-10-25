@@ -5,7 +5,7 @@
 	width: 100%;
 	background-color: rgba(255,255,255,.8);
 	box-sizing: border-box;
-	padding: 15px;
+	padding: 1px 0 2px;
 	z-index: 500;
     transition: all ease .3s;
 	@media (max-width: @breakpoint-small-max) {
@@ -100,6 +100,7 @@
 }
 .slideshow__content {
     min-height: 100vh;
+    max-height: 100vh;
 }
 
 .slide {
@@ -196,9 +197,13 @@
 	span {
         color: #676767;
         margin: 0 3px;
-        display: inline-block;
-        padding: 6px;
         cursor: pointer;
+        padding: 5px;
+        position: relative;
+        float: left;
+        i {
+            display: block;
+        }
 		&:hover {
 			color: #000;
 		}
@@ -215,6 +220,7 @@
     float: left;
     margin: 0 26px;
     letter-spacing: 1px;
+    line-height: 1.25;
 	b {
 		font-weight: normal;
 		color: #000000;
