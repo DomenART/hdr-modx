@@ -1,5 +1,4 @@
 {extends 'file:templates/master.tpl'}
-
 {block 'content'}
 <header>
 	<div class="header-substrate"></div>

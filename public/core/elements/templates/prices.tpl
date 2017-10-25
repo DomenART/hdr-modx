@@ -104,37 +104,29 @@
 			</div>
 			<div class="uk-grid uk-child-width-1-2@xl">
 				<div>
-					<div class="prices-composition-slider">
+					<div class="prices-composition-slider" uk-slideshow>
 						<div class="composition-slider">
 							<img src="assets/template/img/composition-slider.png">
-							<ul class="uk-hidden" uk-switcher="connect: .js-prices-slider">
-							{foreach $_modx->resource['prices.slider'] | json_decode as $row}
-								<li>{$key}</li>
-							{/foreach}
-							</ul>
-							<ul class="composition-slider__content uk-switcher js-prices-slider">
+							<ul class="composition-slider__content uk-slideshow-items">
 								{foreach $_modx->resource['prices.slider'] | json_decode as $row}
-								<li style="background-image: url('{$row.image}')"></li>
+									<li style="background-image: url('{$row.image}')"></li>
 								{/foreach}
 							</ul>
 						</div>
 						<div class="composition-slider__control uk-flex uk-flex-right uk-flex-middle">
-							<div class="slide-bar__arrows js-prices-slider">
-								<span uk-switcher-item="previous"><i uk-icon="icon: chevron-left"></i></span>
-								<span uk-switcher-item="next"><i uk-icon="icon: chevron-right"></i></span>
+							<div class="slide-bar__arrows">
+								<span uk-slideshow-item="previous"><i uk-icon="icon: chevron-left"></i></span>
+								<span uk-slideshow-item="next"><i uk-icon="icon: chevron-right"></i></span>
 							</div>
 							<div class="composition-slider__counter">
-								<span class="uk-switcher js-prices-slider">
-									{foreach $_modx->resource['prices.slider'] | json_decode as $key => $row}
-										<span class="composition-slider__active">
-											{$key+1}
-										</span>
-									{/foreach}
+								<span>
+									<span class="composition-slider__active js-slideshow-index">
+									</span>
 								</span>
 									из
-									<span class="composition-slider__active">
-										{count($_modx->resource['prices.slider'] | json_decode)}
-									</span>
+								<span class="composition-slider__active">
+									{count($_modx->resource['prices.slider'] | json_decode)}
+								</span>
 							</div>
 						</div>
 					</div>
