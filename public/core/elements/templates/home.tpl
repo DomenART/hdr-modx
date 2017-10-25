@@ -52,7 +52,6 @@
 			<comprasion initial-images='{$_modx->resource.comprasion}'></comprasion>
 		</div>
 	</section>
-	
 	<section class="section-directions">
 		<div class="uk-container">
 			<div class="uk-grid uk-grid-collapse">
