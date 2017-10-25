@@ -1,7 +1,6 @@
 {extends 'file:templates/master.tpl'}
-
 {block 'content'}
-<header class="project-header" style="background: url('{$_modx->resource['project.image']}') no-repeat 50% 50%; background-size: cover">
+<header class="project-header" style="background: url('{$_modx->resource['image']}') no-repeat 50% 50%; background-size: cover">
 	<div class="header-substrate"></div>
 	<div class="uk-container">
 		<div class="breadcrumb breadcrumb--white uk-flex uk-flex-center">
