@@ -1,6 +1,6 @@
 {extends 'file:templates/master.tpl'}
 {block 'content'}
-<header class="article-header">
+<header class="header--beige">
     <div class="header-substrate"></div>
     <div class="uk-container">
     	<div class="breadcrumb uk-flex uk-flex-center">
@@ -53,7 +53,7 @@
                     {'pdoResources' | snippet : [
                         'parents' => 14,
                         'limit' => 3,
-                        'sortby' => RAND(),
+                        'sortby' => 'RAND()',
                         'tpl' => '@FILE chunks/items/readmore-item.tpl',
                         'includeTVs' => 'image',
                         'tvPrefix' => '',

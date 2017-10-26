@@ -111,7 +111,7 @@
 				{'pdoResources' | snippet : [
 					'limit' => 4,
 					'parents' => 'page.portfolio' | config, 
-					'sortby' => RAND(),
+					'sortby' => 'RAND()',
 					'tpl' => '@FILE chunks/items/portfolio-item.tpl',
 					'includeTVs' => 'image',
 					'tvPrefix' => '',

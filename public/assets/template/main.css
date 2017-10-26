@@ -11798,6 +11798,9 @@ td.uk-text-break {
 .header-substrate {
   height: 57px;
 }
+.header--beige {
+  background-color: #f7f7f4;
+}
 .breadcrumb {
   padding: 31px 0 27px;
   margin-bottom: 54px;
@@ -14660,9 +14663,6 @@ span.composition-slider__total {
 }
 .pagetitle--article {
   margin-bottom: 60px;
-}
-.article-header {
-  background-color: #f7f7f4;
 }
 .article-promo {
   width: 1300px;
