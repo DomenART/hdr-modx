@@ -110,7 +110,7 @@
 			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@m">
 				{'pdoResources' | snippet : [
 					'limit' => 4,
-					'parents' => 2, 
+					'parents' => 'page.portfolio', 
 					'sortby' => RAND(),
 					'tpl' => '@FILE chunks/items/portfolio-item.tpl',
 					'includeTVs' => 'image',
