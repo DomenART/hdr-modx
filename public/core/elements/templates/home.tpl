@@ -101,7 +101,7 @@
 
 	<section class="section-portfolio">
 		<div class="uk-container">
-			<div class="section-title section-title--with-all">
+			<div class="section-title">
 				<span class="section-title__text">
 					Портфолио
 					<a href="#" class="view-all">смотреть все</a>

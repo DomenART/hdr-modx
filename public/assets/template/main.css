@@ -11917,10 +11917,11 @@ td.uk-text-break {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.9px;
-  padding: 10px 60px;
+  padding: 10px 35px;
   background: transparent;
   border: 1px solid #fff;
   transition: 0.2s ease-out;
+  min-width: 250px;
 }
 .button-framed:hover {
   background-color: rgba(0, 0, 0, 0.2);
@@ -11993,7 +11994,7 @@ td.uk-text-break {
   color: #fefefe;
 }
 .view-all:hover:before {
-  width: 80%;
+  width: 60px;
 }
 .view-all::before {
   content: '';
@@ -12017,14 +12018,12 @@ td.uk-text-break {
 }
 @media (max-width: 959px) {
   .view-all {
-    left: 50%;
-    top: 54px;
-    transform: translate(-50%, 0);
-  }
-}
-@media (max-width: 639px) {
-  .view-all {
-    top: 37px;
+    transform: none;
+    left: auto;
+    top: auto;
+    display: block;
+    margin: 10px auto;
+    position: relative;
   }
 }
 .portfolio-item {
@@ -12200,6 +12199,9 @@ td.uk-text-break {
 }
 .form-required {
   color: #ff0000;
+}
+#mse2_mfilter .btn_more {
+  display: none !important;
 }
 .menu__bg {
   position: fixed;
@@ -13210,16 +13212,10 @@ td.uk-text-break {
   .section-title {
     margin: 36px 0;
   }
-  .section-title--with-all {
-    margin-bottom: 90px;
-  }
 }
 @media (max-width: 639px) {
   .section-title {
     margin: 25px 0;
-  }
-  .section-title--with-all {
-    margin-bottom: 65px;
   }
 }
 .section-title__text {
@@ -13235,7 +13231,7 @@ td.uk-text-break {
   content: '';
   position: absolute;
   left: -50px;
-  top: 50%;
+  top: 14px;
   width: 40px;
   height: 1px;
   background-color: #ffffff;
@@ -13245,6 +13241,24 @@ td.uk-text-break {
 }
 .section-title--dark .section-title__text::before {
   background-color: #000000;
+}
+.paging {
+  text-align: center;
+  margin: 60px 0;
+}
+@media (max-width: 959px) {
+  .paging {
+    margin: 36px 0;
+  }
+}
+@media (max-width: 639px) {
+  .paging {
+    margin: 25px 0;
+  }
+}
+.paging__inner {
+  display: inline-block;
+  position: relative;
 }
 .working-list {
   counter-reset: working;

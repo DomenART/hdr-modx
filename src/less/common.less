@@ -188,10 +188,11 @@
 	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 0.9px;
-	padding: 10px 60px;
+	padding: 10px 35px;
 	background: transparent;
 	border: 1px solid #fff;
 	transition: 0.2s ease-out;
+	min-width: 250px;
 	&:hover {
 		background-color: rgba(0, 0, 0, 0.2);
 		color: #fff;
@@ -261,7 +262,7 @@
         text-decoration: none;
         color: #fefefe;
         &:before {
-            width: 80%;
+            width: 60px;
         }
     }
     &::before {
@@ -286,12 +287,15 @@
 	}
 
     @media (max-width:@breakpoint-small-max) {
-		left: 50%;
-		top: 54px;
-		transform: translate(-50%,0);
+		transform: none;
+		left: auto;
+		top: auto;
+		display: block;
+		margin: 10px auto;
+		position: relative;
     }
     @media (max-width:@breakpoint-xsmall-max) {
-		top: 37px;
+		
     }
 }
 
@@ -477,4 +481,9 @@
 
 .form-required {
 	color: #ff0000;
+}
+
+// скрыть кнопку пагинации поумолчанию
+#mse2_mfilter .btn_more {
+	display: none !important;
 }

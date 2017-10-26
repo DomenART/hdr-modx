@@ -115,6 +115,36 @@ heightMatch(packagesText);
 heightMatch(packagesTitle);
 heightMatch(packagesDesc);
 
-UIkit.util.on('#slideshow', 'itemshow', function (el, slideshow) {
-	slideshow.$el.querySelector('.js-slideshow-index').innerHTML = slideshow.index + 1
-})
+/**
+ * update the index of the active slide
+ */
+var slideshow = document.getElementById('slideshow')
+if(slideshow) {
+	UIkit.util.on(slideshow, 'itemshow', function (el, slideshow) {
+		slideshow.$el.querySelector('.js-slideshow-index').innerHTML = slideshow.index + 1
+	})
+}
+
+/**
+ * pagination on page
+ */
+var pagingMore = document.querySelector('.js-paging-more')
+var pagingAll = document.querySelector('.js-paging-all')
+if(pagingMore && pagingAll) {
+	pagingMore.addEventListener('click', () => {
+		mSearch2.addPage()
+	})
+
+	pagingAll.addEventListener('click', () => {
+		mSearch2.load({
+			page: 1,
+			limit: 9999 // bad
+		})
+	})
+	
+	// hide the pagination section
+	$(document).on('mse2_load', (e, response) => {
+		if(response.data.pages == response.data.page)
+			document.querySelector('#mse2_mfilter .paging-more').style.display = 'none'
+	})
+}

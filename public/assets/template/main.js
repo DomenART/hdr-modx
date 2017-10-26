@@ -7284,10 +7284,10 @@ _uikit2.default.use(_uikitIcons2.default);
  */
 var slideBar = document.getElementById('slide-bar');
 if (slideBar) {
-	var slideshow = document.getElementById('slideshow');
+	var _slideshow = document.getElementById('slideshow');
 
 	window.addEventListener('scroll', function (e) {
-		if (window.scrollY > slideshow.offsetHeight - window.innerHeight) slideBar.classList.add('slide-bar--sticky');else slideBar.classList.remove('slide-bar--sticky');
+		if (window.scrollY > _slideshow.offsetHeight - window.innerHeight) slideBar.classList.add('slide-bar--sticky');else slideBar.classList.remove('slide-bar--sticky');
 	});
 }
 
@@ -7356,9 +7356,38 @@ heightMatch(packagesText);
 heightMatch(packagesTitle);
 heightMatch(packagesDesc);
 
-_uikit2.default.util.on('#slideshow', 'itemshow', function (el, slideshow) {
-	slideshow.$el.querySelector('.js-slideshow-index').innerHTML = slideshow.index + 1;
-});
+/**
+ * update the index of the active slide
+ */
+var slideshow = document.getElementById('slideshow');
+if (slideshow) {
+	_uikit2.default.util.on(slideshow, 'itemshow', function (el, slideshow) {
+		slideshow.$el.querySelector('.js-slideshow-index').innerHTML = slideshow.index + 1;
+	});
+}
+
+/**
+ * pagination on page
+ */
+var pagingMore = document.querySelector('.js-paging-more');
+var pagingAll = document.querySelector('.js-paging-all');
+if (pagingMore && pagingAll) {
+	pagingMore.addEventListener('click', function () {
+		mSearch2.addPage();
+	});
+
+	pagingAll.addEventListener('click', function () {
+		mSearch2.load({
+			page: 1,
+			limit: 9999 // bad
+		});
+	});
+
+	// hide the pagination section
+	$(document).on('mse2_load', function (e, response) {
+		if (response.data.pages == response.data.page) document.querySelector('#mse2_mfilter .paging-more').style.display = 'none';
+	});
+}
 
 /***/ }),
 /* 65 */
@@ -18291,7 +18320,7 @@ Vue$3.compile = compileToFunctions;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_presets_es2015_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_comprasion_vue__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_presets_es2015_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_comprasion_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_presets_es2015_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_comprasion_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4195570e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_comprasion_vue__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0e86c21b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_comprasion_vue__ = __webpack_require__(101);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
@@ -18312,7 +18341,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_presets_es2015_node_modules_vue_loader_lib_selector_type_script_index_0_bustCache_comprasion_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4195570e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_comprasion_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0e86c21b_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_bustCache_comprasion_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -18328,9 +18357,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-4195570e", Component.options)
+    hotAPI.createRecord("data-v-0e86c21b", Component.options)
   } else {
-    hotAPI.reload("data-v-4195570e", Component.options)
+    hotAPI.reload("data-v-0e86c21b", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -23574,7 +23603,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-4195570e", esExports)
+    require("vue-hot-reload-api")      .rerender("data-v-0e86c21b", esExports)
   }
 }
 

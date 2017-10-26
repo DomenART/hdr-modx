@@ -19,7 +19,6 @@
 			'limit' => 4,
 			'ajaxMode' => 'button',
 			'ajaxTplMore' => '@INLINE <div class="portfolio-pool__control uk-flex uk-flex-around uk-flex-center@s uk-flex-middle uk-flex-wrap"><button type="button" class="uk-button button-intro button-intro--portfolio js-portfolio-more">Показать ещё<span class="button-intro__arrow"></span></button><button type="button" class="view-all view-all--portfolio js-portfolio-more-all">показать все</button></div>',
-			'paginator' => 'pdoPage@portfolioPaginator',
 			'tplOuter' => '@FILE chunks/filter/outer.tpl',
 			'tpls' => '@FILE chunks/items/portfolio-item.tpl',
 			'filters' => 'publishedon:year,parent:categories',
