@@ -144,7 +144,7 @@ if(pagingMore && pagingAll) {
 	
 	// hide the pagination section
 	$(document).on('mse2_load', (e, response) => {
-		if(response.data.pages == response.data.page)
-			document.querySelector('#mse2_mfilter .paging-more').style.display = 'none'
+		let section = document.querySelector('#mse2_mfilter .paging')
+		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
 	})
 }
