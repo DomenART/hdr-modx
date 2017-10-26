@@ -12574,7 +12574,8 @@ td.uk-text-break {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.8) url(img/header-substrate.jpg?e6dc30bf403c81118a9fdb74d21a3792) 50% 50% no-repeat;
+  background-size: cover;
   box-sizing: border-box;
   padding: 1px 0 2px;
   z-index: 500;
@@ -14804,10 +14805,12 @@ span.composition-slider__total {
   color: #cc99cc;
 }
 .article-content h4 {
-  padding-left: 50px;
+  padding-top: 50px;
+  padding-left: 100px;
 }
 .article-content h4 + p {
-  padding-left: 50px;
+  padding-bottom: 50px;
+  padding-left: 100px;
 }
 .article-content ul {
   list-style-type: none;
@@ -14862,7 +14865,7 @@ span.composition-slider__total {
   font-size: 13px;
 }
 .article-control a:hover {
-  color: #999999;
+  color: #808080;
 }
 .article-control > div > div {
   padding: 20px 0;
@@ -14875,9 +14878,6 @@ a.article-control__link {
   text-decoration: none;
   border-bottom: 1px dotted #000000;
   position: relative;
-}
-a.article-control__link:hover {
-  color: #808080;
 }
 a.article-control__link span {
   position: absolute;
