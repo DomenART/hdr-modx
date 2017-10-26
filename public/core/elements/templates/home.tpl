@@ -108,40 +108,16 @@
 				</span>
 			</div>
 			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@m">
-				<div>
-					<a href="#" class="portfolio-item uk-cover-container uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-						<img src="assets/template/img/project-1.jpg" alt="" class="portfolio-item__image" uk-cover>
-						<span class="portfolio-item__title">Название проекта</span>
-						<span class="portfolio-item__line"></span>
-						<span class="portfolio-item__desc">Категория проекта</span>
-					</a>
-				</div>
-				<div>
-					<a href="#" class="portfolio-item uk-cover-container uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-						<img src="assets/template/img/project-2.jpg" alt="" class="portfolio-item__image" uk-cover>
-						<span class="portfolio-item__title">Название проекта</span>
-						<span class="portfolio-item__line"></span>
-						<span class="portfolio-item__desc">Категория проекта</span>
-					</a>
-				</div>
-				<div>
-					<a href="#" class="portfolio-item uk-cover-container uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-						<img src="assets/template/img/project-3.jpg" alt="" class="portfolio-item__image" uk-cover>
-						<span class="portfolio-item__title">Название проекта</span>
-						<span class="portfolio-item__line"></span>
-						<span class="portfolio-item__desc">Категория проекта</span>
-					</a>
-				</div>
-				<div>
-					<a href="#" class="portfolio-item uk-cover-container uk-flex uk-flex-column uk-flex-center uk-flex-middle">
-						<img src="assets/template/img/project-4.jpg" alt="" class="portfolio-item__image" uk-cover>
-						<span class="portfolio-item__title">Название проекта</span>
-						<span class="portfolio-item__line"></span>
-						<span class="portfolio-item__desc">Категория проекта</span>
-					</a>
-				</div>
+				{'pdoResources' | snippet : [
+					'limit' => 4,
+					'parents' => 2, 
+					'sortby' => RAND(),
+					'tpl' => '@FILE chunks/items/portfolio-item.tpl',
+					'includeTVs' => 'image',
+					'tvPrefix' => '',
+					'where' => ['class_key' => 'Ticket']
+				]} 
 			</div>
-		</div>
 	</section>
 
 	<section class="section-working">

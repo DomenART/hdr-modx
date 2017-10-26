@@ -156,9 +156,11 @@
         color: #cc99cc;
     }
     h4 {
-        padding-left: 50px;
+        padding-top: 50px;
+        padding-left: 100px;    
         & + p {
-            padding-left: 50px;
+            padding-bottom: 50px;
+            padding-left: 100px;
         }
     }
     ul {
@@ -214,7 +216,7 @@
     a {
         font-size: 13px;
         &:hover {
-            color: #999999;
+            color: lighten(#000000, 50%);
         }
     }
     & > div > div  {
@@ -230,9 +232,6 @@ a.article-control__link {
     text-decoration: none;
     border-bottom: 1px dotted #000000;
     position: relative;
-    &:hover {
-        color: lighten(#000000, 50%);
-    }
     span {
         position: absolute;
         left: -25px;
