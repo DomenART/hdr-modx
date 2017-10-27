@@ -34,9 +34,11 @@
 
 .header-substrate {
 	height: 57px;
+	background: url('../img/header-substrate.jpg') 50% 50% no-repeat;
+	background-size: cover;
 }
 
-.header--beige {
+.header-beige {
 	background-color: #f7f7f4;
 }
 
@@ -483,7 +485,38 @@
 	color: #ff0000;
 }
 
-// скрыть кнопку пагинации поумолчанию
-#mse2_mfilter .btn_more {
-	display: none !important;
+.article-item__image {
+	background-color: #000;
+	&:hover {
+		img {
+			opacity: 0.8;
+		}
+	}
+	img {
+		width: 100%;
+		height: 234px;
+	}
+}
+	
+.article-item__date {
+	margin-right: 35px;
+	color: #666666;
+	font-size: 14px;
+}
+
+.article-item__category {
+	color: #666666;
+	font-size: 14px;
+}
+
+.article-item__title {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.article-item__intro {
+	color: #666666;
+	font-size: 16px;
+	line-height: 1.2;
 }

@@ -1,6 +1,6 @@
 {extends 'file:templates/master.tpl'}
 {block 'content'}
-<header class="header--beige">
+<header class="header-beige">
 	<div class="header-substrate"></div>
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
@@ -113,7 +113,6 @@
             </div>   
             <div class="feedback-item-wrapper">
                 {'pdoResources' | snippet : [
-                    'parents' => '23',
                     'limit' => '2',
                     'tpl' => '@FILE chunks/items/feedback-item.tpl',
                     'includeContent' => '1'

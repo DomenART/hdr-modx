@@ -1,6 +1,6 @@
 {extends 'file:templates/master.tpl'}
 {block 'content'}
-<header class="header--beige">
+<header class="header-beige">
     <div class="header-substrate"></div>
     <div class="uk-container">
     	<div class="breadcrumb uk-flex uk-flex-center">
@@ -28,7 +28,7 @@
             <section class="article-control">
                 <div class="uk-grid uk-flex-middle">
                     <div class="uk-width-1-3@m uk-flex uk-flex-middle uk-flex-around uk-flex-betwee@m">
-                        <a href="{$_modx->resource.parent | url}" class="article-control__link"><span uk-icon="icon: arrow-left"></span>Вернуться к статьям</a>
+                        <a href="{'page.blog' | config | url}" class="article-control__link"><span uk-icon="icon: arrow-left"></span>Вернуться к статьям</a>
                         {'pdoNeighbors' | snippet : [
                             'tplPrev' => '@INLINE <a href="/{$uri}"><span uk-icon="icon: chevron-left"></span></a>',
                             'tplNext' => '@INLINE <a href="/{$uri}"><span uk-icon="icon: chevron-right"></span></a>',
@@ -51,7 +51,7 @@
                 </div>
                 <div class="uk-child-width-1-3@s uk-text-center uk-text-left@s" uk-grid uk-height-match="target: .readmore-item__image img" uk-height-match="target: .readmore-item__image img">
                     {'pdoResources' | snippet : [
-                        'parents' => 14,
+                        'parents' => $_modx->resource.parent,
                         'limit' => 3,
                         'sortby' => 'RAND()',
                         'tpl' => '@FILE chunks/items/readmore-item.tpl',

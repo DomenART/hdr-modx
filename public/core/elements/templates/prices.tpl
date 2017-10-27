@@ -104,7 +104,7 @@
 			</div>
 			<div class="uk-grid uk-child-width-1-2@xl">
 				<div>
-					<div class="prices-composition-slider" uk-slideshow>
+					<div class="prices-composition-slider" id="slideshow" uk-slideshow>
 						<div class="composition-slider">
 							<img src="assets/template/img/composition-slider.png">
 							<ul class="composition-slider__content uk-slideshow-items">
@@ -119,12 +119,10 @@
 								<span uk-slideshow-item="next"><i uk-icon="icon: chevron-right"></i></span>
 							</div>
 							<div class="composition-slider__counter">
-								<span>
-									<span class="composition-slider__active js-slideshow-index">
+								<span class="composition-slider__active js-slideshow-index">
 									</span>
-								</span>
-									из
-								<span class="composition-slider__active">
+								<span class="composition-slider__of">из</span>
+								<span>
 									{count($_modx->resource['prices.slider'] | json_decode)}
 								</span>
 							</div>

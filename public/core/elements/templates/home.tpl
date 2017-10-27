@@ -1,5 +1,4 @@
 {extends 'file:templates/master.tpl'}
-
 {block 'content'}
 	{set $slideshow = ($_modx->resource.slideshow | fromJSON)}
 	<section class="slideshow" id="slideshow" uk-slideshow="animation: push">

@@ -1,7 +1,7 @@
 <div class="article-promo__info uk-grid uk-grid-collapse uk-child-width-1-2@s uk-flex-middle">
     <div class="uk-flex uk-flex-middle">
         <time class="article-promo__date">{$publishedon | date_format : '%d.%m.%y'}</time>
-        <a href="{$_modx->resource.parent | url}" class="article-promo__section">{$_modx->resource.parent | resource: 'pagetitle'}</a>
+        <span class="article-promo__section">{$_modx->resource.parent | resource: 'pagetitle'}</span>
     </div>
     <div class="uk-flex uk-flex-middle uk-flex-between uk-flex-wrap">
         <a href="" class="article-promo__like">147</a>

@@ -1,6 +1,6 @@
 {extends 'file:templates/master.tpl'}
 {block 'content'}
-<header class="header--beige">
+<header class="header-beige">
 	<div class="header-substrate"></div>
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
@@ -10,6 +10,7 @@
 		    ]}
 		</div>
 		<h1 class="pagetitle pagetitle--portfolio">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
+		<div></div>
 	</div>
 </header>
 <div class="portfolio-pool">
@@ -19,7 +20,8 @@
 			'limit' => 4,
 			'ajaxMode' => 'button',
 			'ajaxTplMore' => '@INLINE <div class="portfolio-pool__control uk-flex uk-flex-around uk-flex-center@s uk-flex-middle uk-flex-wrap"><button type="button" class="uk-button button-intro button-intro--portfolio js-portfolio-more">Показать ещё<span class="button-intro__arrow"></span></button><button type="button" class="view-all view-all--portfolio js-portfolio-more-all">показать все</button></div>',
-			'tplOuter' => '@FILE chunks/filter/outer.tpl',
+			'paginator' => 'pdoPage@portfolioPaginator',
+			'tplOuter' => '@FILE chunks/filter/outer-portfolio.tpl',
 			'tpls' => '@FILE chunks/items/portfolio-item.tpl',
 			'filters' => 'publishedon:year,parent:categories',
 			'suggestionsRadio' => 'resource|publishedon,resource|parent',
