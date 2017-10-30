@@ -14,7 +14,7 @@
 	</div>
 </header>
 <div class="blog-pool">
-	<div class="uk-container">
+	
 		{'!mFilter2' | snippet : [
 		    'parents' => $_modx->resource.id,
 			'limit' => 4,
@@ -32,6 +32,6 @@
 			'tplFilter.row.resource|parent' => '@FILE chunks/filter/option.tpl',
 			'where' => ['class_key' => 'Ticket']
 		]}
-	</div>
+	
 </div>
 {/block}

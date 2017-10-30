@@ -185,6 +185,23 @@
 	}
 }
 
+.paging {
+    text-align: center;
+    padding: 60px 0;
+    background-color: #4d4d4c;
+    @media (max-width:@breakpoint-small-max) {
+        padding: 36px 0;
+    }
+    @media (max-width:@breakpoint-xsmall-max) {
+        padding: 25px 0;
+    }
+}
+
+.paging__inner {
+    display: inline-block;
+    position: relative;
+}
+
 .button-framed {
 	color: #ffffff;
 	font-size: 18px;
@@ -520,3 +537,7 @@
 	font-size: 16px;
 	line-height: 1.2;
 }
+
+#mse2_mfilter .btn_more {
+	display: none !important;
+} 

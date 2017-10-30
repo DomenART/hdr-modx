@@ -11914,6 +11914,25 @@ td.uk-text-break {
   right: -6px;
   transition: 0.2s ease-out;
 }
+.paging {
+  text-align: center;
+  padding: 60px 0;
+  background-color: #4d4d4c;
+}
+@media (max-width: 959px) {
+  .paging {
+    padding: 36px 0;
+  }
+}
+@media (max-width: 639px) {
+  .paging {
+    padding: 25px 0;
+  }
+}
+.paging__inner {
+  display: inline-block;
+  position: relative;
+}
 .button-framed {
   color: #ffffff;
   font-size: 18px;
@@ -12230,6 +12249,9 @@ td.uk-text-break {
   color: #666666;
   font-size: 16px;
   line-height: 1.2;
+}
+#mse2_mfilter .btn_more {
+  display: none !important;
 }
 .menu__bg {
   position: fixed;
@@ -13268,24 +13290,6 @@ td.uk-text-break {
 }
 .section-title--dark .section-title__text::before {
   background-color: #000000;
-}
-.paging {
-  text-align: center;
-  margin: 60px 0;
-}
-@media (max-width: 959px) {
-  .paging {
-    margin: 36px 0;
-  }
-}
-@media (max-width: 639px) {
-  .paging {
-    margin: 25px 0;
-  }
-}
-.paging__inner {
-  display: inline-block;
-  position: relative;
 }
 .working-list {
   counter-reset: working;
