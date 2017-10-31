@@ -12,11 +12,13 @@ import '../less/main.less'
  */
 import Vue from 'vue'
 import comprasion from './components/comprasion.vue'
+import comprasionHome from './components/comprasion-home.vue'
+import comprasionInternship from './components/comprasion-internship.vue'
 
 var app = new Vue({
 	el: '#app',
 	components: {
-		comprasion
+		comprasion, comprasionHome, comprasionInternship
 	}
 })
 
@@ -142,7 +144,7 @@ if (pagingMore && pagingAll) {
 			limit: 9999 // bad
 		})
 	})
-	
+
 	// hide the pagination section
 	$(document).on('mse2_load', (e, response) => {
 		let section = document.querySelector('#mse2_mfilter .paging')

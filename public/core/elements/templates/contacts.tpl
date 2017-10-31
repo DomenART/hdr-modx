@@ -27,7 +27,7 @@
 					<div class="contacts-info__col">
 						{foreach $_modx->resource['contacts.social'] | json_decode as $row}
 							<div class="contacts-info__row">
-								<a href="{$row.text}">{$row.text}</a>
+								<a href="{$row.link}">{$row.text}</a>
 							</div>
 						{/foreach}
 					</div>

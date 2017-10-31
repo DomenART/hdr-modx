@@ -1,37 +1,25 @@
 <template>
 	<div>
-		<header class="comprasion__header uk-flex uk-flex-between uk-flex-middle">
-			<div class="comprasion__title">Какой стиль интерьера выберешь ты?</div>
-			<a class="comprasion__select" :href="images[second].url">Выберите свой интерьер</a>
-		</header>
-
 		<div class="comprasion__arrows">
 			<span></span>
 			<span></span>
 		</div>
 
 		<figure class="comprasion" :style="{width: width + 'px', height: height + 'px'}">
-			<div class="comprasion__main" :style="{backgroundImage:'url(' + images[main].image + ')'}">
-				<div class="comprasion__main__mask"></div>
+			<div class="comprasion__before" :style="{backgroundImage:'url(' + before.image + ')'}">
+				<div class="comprasion__before__mask"></div>
 			</div>
 
-			<div class="comprasion__second" :style="{backgroundImage:'url(' + images[second].image + ')'}">
-				<div class="comprasion__second__mask"></div>
+			<div class="comprasion__after" :style="{backgroundImage:'url(' + after.image + ')'}">
+				<div class="comprasion__after__mask"></div>
 			</div>
 
-			<span class="comprasion__label comprasion__label--main" v-show="!hideMainLabel">{{ images[main].name }}</span>
+			<span class="comprasion__label comprasion__label--before" v-show="!hideBeforeLabel">{{ before.label }}</span>
 
-			<span class="comprasion__label comprasion__label--second" v-show="!hideSecondLabel">{{ images[second].name }}</span>
+			<span class="comprasion__label comprasion__label--after" v-show="!hideAfterLabel">{{ after.label }}</span>
 
 			<span class="comprasion__handle" @mousedown="down"></span>
 		</figure>
-
-		<div class="comprasion-carousel uk-grid uk-child-width-1-2 uk-child-width-1-4@s">
-			<div v-for="(item, index) in images" :key="item.MIGX_id" :class="'comprasion-carousel__item' + (index==main?' active':'')" @click="setMain(index)">
-				<div class="comprasion-carousel__image"><img :src="item.image" alt=""></div>
-				<div class="comprasion-carousel__title" v-html="item.name"></div>
-			</div>
-		</div>
 	</div>
 </template>
 
@@ -39,15 +27,20 @@
 	import Velocity from 'velocity-animate'
 
 	module.exports = {
-		props: ['initialImages'],
+		props: ['initialBeforeImage', 'initialAfterImage', 'initialBeforeLabel', 'initialAfterLabel'],
 
 		data () {
 			return {
-				images: JSON.parse(this.initialImages),
-				main: 0,
-				second: 1,
-				hideMainLabel: false,
-				hideSecondLabel: false,
+        before: {
+          image: this.initialBeforeImage,
+          label: this.initialBeforeImage?this.initialBeforeLabel:'было'
+        },
+        after: {
+          image: this.initialAfterImage,
+          label: this.initialAfterImage?this.initialAfterLabel:'стало'
+        },
+				hideBeforeLabel: false,
+				hideAfterLabel: false,
 				baseWidth: 1200,
 				baseHeight: 460,
 				width: 1200,
@@ -65,36 +58,36 @@
 				return this.$el.querySelector('.comprasion')
 			},
 
-			mainImage () {
-				return this.container.querySelector('.comprasion__main')
+			beforeImage () {
+				return this.container.querySelector('.comprasion__before')
 			},
 
-			mainImageMask () {
-				return this.container.querySelector('.comprasion__main__mask')
+			beforeImageMask () {
+				return this.container.querySelector('.comprasion__before__mask')
 			},
 
-			secondImage () {
-				return this.container.querySelector('.comprasion__second')
+			afterImage () {
+				return this.container.querySelector('.comprasion__after')
 			},
 
-			secondImageMask () {
-				return this.container.querySelector('.comprasion__second__mask')
+			afterImageMask () {
+				return this.container.querySelector('.comprasion__after__mask')
 			},
 
-			mainLabel () {
-				return this.container.querySelector('.comprasion__label--main')
+			beforeLabel () {
+				return this.container.querySelector('.comprasion__label--before')
 			},
 
-			secondLabel () {
-				return this.container.querySelector('.comprasion__label--second')
+			afterLabel () {
+				return this.container.querySelector('.comprasion__label--after')
 			},
 
-			mainLabelWidth () {
-				return this.mainLabel.offsetWidth
+			beforeLabelWidth () {
+				return this.beforeLabel.offsetWidth
 			},
 
-			secondLabelWidth () {
-				return this.secondLabel.offsetWidth
+			afterLabelWidth () {
+				return this.afterLabel.offsetWidth
 			},
 
 			handle () {
@@ -106,9 +99,9 @@
 			updateClip (coords) {
 				coords = coords || this.clipCoords()
 
-				this.secondImage.style.clip = "rect(0, " + coords.x + "px, " + coords.y + "px, 0)"
-				this.hideMainLabel = coords.x > this.container.offsetWidth - this.mainLabelWidth
-				this.hideSecondLabel = this.secondLabelWidth > coords.x
+				this.afterImage.style.clip = "rect(0, " + coords.x + "px, " + coords.y + "px, 0)"
+				this.hideBeforeLabel = coords.x > this.container.offsetWidth - this.beforeLabelWidth
+				this.hideAfterLabel = this.afterLabelWidth > coords.x
 			},
 
 			down () {
@@ -144,30 +137,6 @@
 				}
 			},
 
-			setMain (index) {
-				if(index == this.main) return
-
-				let main = this.main
-				let second = this.second
-
-				this.second = this.main
-				this.main = index
-
-				/**
-				 * Анимация перехода для основного изображния
-				 */
-				this.mainImageMask.style.backgroundImage = 'url(' + this.images[main].image + ')'
-				this.mainImageMask.style.opacity = 1
-				Velocity(this.mainImageMask, {opacity: 0}, { duration: 300 })
-
-				/**
-				 * Анимация перехода для второстепенного изображния 
-				 */
-				this.secondImageMask.style.backgroundImage = 'url(' + this.images[second].image + ')'
-				this.secondImageMask.style.opacity = 1
-				Velocity(this.secondImageMask, {opacity: 0}, { duration: 300 })
-			},
-
 			reset () {
 				this.handle.style.left = ''
 				this.updateClip()
@@ -182,46 +151,6 @@
 </script>
 
 <style lang="less">
-.comprasion__header {
-	margin-bottom: 20px;
-    @media (max-width:959px) {
-		-ms-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		flex-wrap: wrap;
-		margin-bottom: 36px;
-    }
-}
-
-.comprasion__title {
-	color: #fefefe;
-	font-family: 'Museo Sans', sans-serif;
-	font-size: 24px;
-	font-weight: 500;
-	line-height: 1.125;
-    @media (max-width:959px) {
-		width: 100%;
-		margin-bottom: 22px;
-    }
-    @media (max-width:639px) {
-		margin-bottom: 30px;
-    }
-}
-
-.comprasion__select {
-	color: #cccccc;
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 1;
-	text-decoration: none;
-	&:hover {
-		color: #fff;
-		text-decoration: none;
-	}
-    @media (max-width:639px) {
-		font-size: 16px;
-    }
-}
-
 .comprasion__arrows {
 	text-align: center;
 	margin-bottom: 10px;
@@ -249,10 +178,10 @@
 	margin: 0 0 30px;
 }
 
-.comprasion__main__mask,
-.comprasion__second__mask,
-.comprasion__second,
-.comprasion__main {
+.comprasion__before__mask,
+.comprasion__after__mask,
+.comprasion__after,
+.comprasion__before {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -271,14 +200,14 @@
 	font-weight: 400;
 	line-height: 1;
 	padding: 12px;
-	-webkit-user-select: none;  
-	-moz-user-select: none;    
-	-ms-user-select: none;      
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
-	&--main {
+	&--before {
 		right: 0;
 	}
-	&--second {
+	&--after {
 		left: 0;
 	}
 }
@@ -315,43 +244,5 @@
 		background-color: #cccccc;
 		position: absolute;
 	}
-}
-
-.comprasion-carousel {
-	cursor: pointer;
-}
-
-.comprasion-carousel__item {
-	margin-bottom: 10px;
-	&:hover,
-	&.active {
-		opacity: 1;
-		.comprasion-carousel__image img {
-			opacity: 1;
-		}
-		.comprasion-carousel__title {
-			color: #fff;
-		}
-	}
-}
-
-.comprasion-carousel__image {
-	display: block;
-	width: 100%;
-	margin-bottom: 10px;
-	background: #000;
-	img {
-		opacity: .4;
-		transition: all ease .3s;
-	}
-}
-
-.comprasion-carousel__title {
-	color: #cccccc;
-	font-size: 16px;
-	line-height: 1.8;
-    @media (max-width:959px) {
-		display: none;
-    }
 }
 </style>

@@ -4,13 +4,13 @@
 	<div class="header-substrate"></div>
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
-		    {'pdoCrumbs' | snippet : [
-		        'showHome' => '1',
-		        'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
-		    ]}
+			{'pdoCrumbs' | snippet : [
+			'showHome' => '1',
+			'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
+			]}
 		</div>
-        <h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
-        <div></div>
+		<h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
+		<div></div>
 	</div>
 </header>
 <main class="internship-main">
@@ -48,9 +48,33 @@
             </div>
         </div>
     </section>
-    <section class="internship-comparison">
-            <comprasion initial-images='{$_modx->resource.comprasion}'></comprasion>
-    </section>
+
+		<section class="internship-comprasion">
+			<div class="uk-container">
+				<ul class="uk-switcher js-internship-comprasion">
+					{foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
+						<li>
+							<comprasion initial-before-image='{$item['image_before']}' initial-after-image='{$item['image_after']}'></comprasion>
+							<div class="">
+								{$item['title']}
+							</div>
+							<div class="">
+								{$item['desc']}
+							</div>
+						</li>
+					{/foreach}
+				</ul>
+				<ul class="uk-grid" uk-switcher="connect: .js-internship-comprasion">
+					{foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
+				    <li class="uk-width-1-4">
+							<img src="/{$item['image']}" alt="">
+							{$item['name']}
+						</li>
+					{/foreach}
+				</ul>
+			</div>
+		</section>
+		
     <section class="internship-prices">
         <div class="uk-container">
             <div class="section-title section-title--dark ">
@@ -75,7 +99,7 @@
         <div class="uk-container">
             <div class="internship-form-wrapper">
                 <div class="internship-enroll__title">
-                    Стажировка 
+                    Стажировка
                 </div>
                 <form class="internship-form">
                     <div class="internship-form__row">
@@ -101,15 +125,15 @@
                 <span class="section-title__text">
                     Отзывы студентов
                 </span>
-            </div>   
+            </div>
             <div class="feedback-item-wrapper">
                 {'pdoResources' | snippet : [
                     'limit' => '2',
                     'tpl' => '@FILE chunks/items/feedback-item.tpl',
                     'includeContent' => '1'
-                ]} 
+                ]}
             </div>
-        </div>     
+        </div>
     </section>
     <section class="internship-comments">
         <div class="internship-comments-wrapper">

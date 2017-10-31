@@ -38,7 +38,7 @@
 			<a href="#second" class="slide-bar__arrow" uk-scroll><i uk-icon="icon: arrow-down; ratio: 1.2"></i></a>
 		</div>
 	</section>
-	
+
 	<section class="section-about" id="second">
 		<div class="uk-container">
 			<div class="section-about__desc">{$_modx->resource.description}</div>
@@ -48,7 +48,7 @@
 	</section>
 	<section class="section-comprasion">
 		<div class="uk-container">
-			<comprasion initial-images='{$_modx->resource.comprasion}'></comprasion>
+			<comprasion-home initial-images='{$_modx->resource.comprasion}'></comprasion-home>
 		</div>
 	</section>
 	<section class="section-directions">
@@ -109,13 +109,13 @@
 			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@m">
 				{'pdoResources' | snippet : [
 					'limit' => 4,
-					'parents' => 'page.portfolio' | config, 
+					'parents' => 'page.portfolio' | config,
 					'sortby' => 'RAND()',
 					'tpl' => '@FILE chunks/items/portfolio-item.tpl',
 					'includeTVs' => 'image',
 					'tvPrefix' => '',
 					'where' => ['class_key' => 'Ticket']
-				]} 
+				]}
 			</div>
 	</section>
 
@@ -214,7 +214,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<div class="home-text">
 				<h2>{$_modx->resource.info_title}</h2>
 				<h3>Что вы получаете, делая заказ в студии дизайна?</h3>
