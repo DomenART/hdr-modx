@@ -14,7 +14,7 @@
 	</div>
 </header>
 <main class="internship-main">
-    <section class="internship-main">
+    <section class="internship-header">
         <div class="uk-container">
             <div class="internship-image">
                 <img src="{$_modx->resource['image']}" alt="">
@@ -31,17 +31,8 @@
                     Об авторе
                 </span>
             </div>
-            <div class="uk-grid uk-child-width-1-2@m">
-                <div>
-                    <div class="internship-author__photo">
-                        <img src="{$_modx->resource['internship.photo']}" alt="">
-                    </div>
-                </div>
-                <div>
-                    <div class="internship-author__about">
-                        {$_modx->resource['internship.author']}
-                    </div>
-                </div>
+            <div class="internship-author__about">
+                {$_modx->resource['internship.author']}
             </div>
         </div>
     </section>

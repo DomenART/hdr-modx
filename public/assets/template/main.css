@@ -15174,9 +15174,6 @@ a.edit {
 .articles-content {
   padding-bottom: 50px;
 }
-.internship-header {
-  background-color: #f7f7f4;
-}
 .internship-main {
   background: linear-gradient(to bottom, #f7f7f4 490px, #fff 490px);
 }
@@ -15193,6 +15190,11 @@ a.edit {
 .internship-text {
   max-width: 795px;
   margin: 0 auto;
+}
+.internship-author__about img {
+  float: left;
+  padding-right: 35px;
+  padding-bottom: 35px;
 }
 .internship-description__text {
   max-width: 800px;
@@ -15221,7 +15223,7 @@ a.edit {
   color: #cc0000 !important;
 }
 .internship-enroll {
-  padding-top: 50px;
+  padding-top: 45px;
   padding-bottom: 90px;
   background-color: #f5f5f5;
 }
@@ -15230,17 +15232,18 @@ a.edit {
   margin: 0 auto;
 }
 .internship-enroll__title {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #666666;
   font-size: 24px;
   line-height: 1;
   letter-spacing: 0.6px;
 }
 .internship-form__row {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 .internship-form {
   padding-left: 42px;
+  padding-right: 60px;
 }
 .internship-form label {
   margin-bottom: 10px;
@@ -15248,11 +15251,24 @@ a.edit {
   font-size: 14px;
 }
 .internship-form input {
+  padding-left: 17px;
   border: 1px solid #cccccc;
   background-color: #fff;
 }
+.internship-form input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+.internship-form input::-moz-placeholder {
+  font-size: 14px;
+}
+.internship-form input:-moz-placeholder {
+  font-size: 14px;
+}
+.internship-form input:-ms-input-placeholder {
+  font-size: 14px;
+}
 .internship-form button {
-  margin-top: 6px;
+  margin-top: 20px;
 }
 @media (max-width: 639px) {
   .internship-form {
