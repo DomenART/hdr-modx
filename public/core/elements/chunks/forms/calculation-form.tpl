@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="calculation__desc">
+        <div class="calculation__desc calculation__desc--wide">
             Введите город или название населенного пункта, где находится ваш объект
         </div>
     </div>
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="calculation__desc">
+        <div class="calculation__desc calculation__desc--wide">
             Введите данные, по которым с вами можно связаться после расчета стоимости
         </div>
     </div>

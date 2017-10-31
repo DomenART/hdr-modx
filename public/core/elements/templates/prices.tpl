@@ -47,7 +47,7 @@
 			<div class="js-packages-wrapper uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m">
 				{foreach $_modx->resource['prices.packages'] | json_decode as $row}
 					<div class="packages-item">
-						<div class="packages-item__title uk-flex uk-flex-middle uk-flex-center">{$row.title}</div>
+						<div class="packages-item__title uk-flex uk-flex-middle uk-flex-center">«{$row.title}» </div>
 						<div class="packages-item__desc uk-flex uk-flex-middle uk-flex-center">{$row.subtitle}</div>
 						<div class="packages-item__actual-price">
 							<span>{$row.price}</span>
