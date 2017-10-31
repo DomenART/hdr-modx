@@ -9,7 +9,7 @@
 		        'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
 		    ]}
 		</div>
-		<h1 class="pagetitle pagetitle--portfolio">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
+		<h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
 		<div></div>
 	</div>
 </header>

@@ -11916,7 +11916,7 @@ td.uk-text-break {
 }
 .paging {
   text-align: center;
-  padding: 60px 0;
+  padding: 95px 0 60px;
   background-color: #4d4d4c;
 }
 @media (max-width: 959px) {
@@ -14143,9 +14143,6 @@ td.uk-text-break {
 .button-intro--contacts .button-intro__arrow {
   margin-left: 34px;
 }
-.pagetitle--portfolio {
-  margin-bottom: 33px;
-}
 .portfolio__filter {
   padding-bottom: 10px;
 }
@@ -14289,11 +14286,6 @@ td.uk-text-break {
     padding: 12px 0;
   }
 }
-@media (max-width: 639px) {
-  .project-bar {
-    padding: 20px 10px;
-  }
-}
 .project-bar__prev,
 .project-bar__next {
   color: #999999;
@@ -14323,6 +14315,7 @@ td.uk-text-break {
 .project-bar__links {
   display: block;
   position: relative;
+  top: 5px;
   color: #999999;
   font-size: 12px;
 }
@@ -14332,7 +14325,7 @@ td.uk-text-break {
 }
 .project-bar__links img {
   display: block;
-  padding: 20px 15px;
+  padding: 15px;
 }
 @media (max-width: 639px) {
   .project-bar__links span {
@@ -14382,6 +14375,7 @@ td.uk-text-break {
   text-align: center;
 }
 .project__text h2 {
+  margin-top: 40px;
   margin-bottom: 34px;
   text-align: center;
   color: #000000;
