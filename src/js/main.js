@@ -130,7 +130,8 @@ if(slideshow) {
  */
 var pagingMore = document.querySelector('.js-paging-more')
 var pagingAll = document.querySelector('.js-paging-all')
-if(pagingMore && pagingAll) {
+
+if (pagingMore && pagingAll) {
 	pagingMore.addEventListener('click', () => {
 		mSearch2.addPage()
 	})
@@ -147,4 +148,19 @@ if(pagingMore && pagingAll) {
 		let section = document.querySelector('#mse2_mfilter .paging')
 		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
 	})
+}
+
+/* Responsive tables in article */
+
+var article = document.querySelector('.article-content')
+
+if (article) {
+	let div = document.createElement('div')
+	let tables = article.querySelectorAll('table')
+
+	tables.forEach(function(element) {
+		element.parentNode.insertBefore(div, element)
+		div.appendChild(element);
+		div.classList.add("article-table-wrapper","uk-overflow-auto")
+	});
 }
