@@ -48,33 +48,38 @@
             </div>
         </div>
     </section>
-
-		<section class="internship-comprasion">
-			<div class="uk-container">
-				<ul class="uk-switcher js-internship-comprasion">
-					{foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
-						<li>
-							<comprasion initial-before-image='{$item['image_before']}' initial-after-image='{$item['image_after']}'></comprasion>
-							<div class="">
-								{$item['title']}
-							</div>
-							<div class="">
-								{$item['desc']}
-							</div>
-						</li>
-					{/foreach}
-				</ul>
-				<ul class="uk-grid" uk-switcher="connect: .js-internship-comprasion">
-					{foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
-				    <li class="uk-width-1-4">
-							<img src="/{$item['image']}" alt="">
-							{$item['name']}
-						</li>
-					{/foreach}
-				</ul>
-			</div>
-		</section>
-		
+    <section class="internship-comprasion">
+        <div class="uk-container">
+            <div class="internship-comprasion__title">Работы наших студентов. До и после</div>
+            <ul class="uk-switcher js-internship-comprasion">
+                {foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
+                    <li>
+                        <comprasion initial-before-image='{$item['image_before']}' initial-after-image='{$item['image_after']}'></comprasion>
+                        <div class="comprasion-review">
+                            <div class="comprasion-review__title">
+                                {$item['title']}
+                            </div>
+                            <div class="comprasion-review__desc">
+                                {$item['desc']}
+                            </div>
+                        </div>
+                    </li>
+                {/foreach}
+            </ul>
+            <ul class="comprasion-thumbs uk-grid uk-child-width-1-2 uk-child-width-1-4@s" uk-grid uk-switcher="connect: .js-internship-comprasion">
+                {foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
+                <li class="comprasion-thumb">
+                        <div class="comprasion-thumb__image">
+                            <img src="{$item['image'] | pthumb : 'zc=1&w=300&h=130'}" alt="">
+                        </div>
+                        <div class="comprasion-thumb__name">
+                            {$item['name']}
+                        </div>
+                    </li>
+                {/foreach}
+            </ul>
+        </div>
+    </section>
     <section class="internship-prices">
         <div class="uk-container">
             <div class="section-title section-title--dark ">

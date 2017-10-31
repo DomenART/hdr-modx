@@ -13,13 +13,12 @@ import '../less/main.less'
 import Vue from 'vue'
 import comprasion from './components/comprasion.vue'
 import comprasionHome from './components/comprasion-home.vue'
-import comprasionInternship from './components/comprasion-internship.vue'
+
+Vue.component('comprasion', comprasion)
+Vue.component('comprasion-home', comprasionHome)
 
 var app = new Vue({
-	el: '#app',
-	components: {
-		comprasion, comprasionHome, comprasionInternship
-	}
+	el: '#app'
 })
 
 /**

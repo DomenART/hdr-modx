@@ -4,7 +4,6 @@
 			<span></span>
 			<span></span>
 		</div>
-
 		<figure class="comprasion" :style="{width: width + 'px', height: height + 'px'}">
 			<div class="comprasion__before" :style="{backgroundImage:'url(' + before.image + ')'}">
 				<div class="comprasion__before__mask"></div>
@@ -24,36 +23,47 @@
 </template>
 
 <script>
-	import Velocity from 'velocity-animate'
-
 	module.exports = {
 		props: ['initialBeforeImage', 'initialAfterImage', 'initialBeforeLabel', 'initialAfterLabel'],
 
 		data () {
 			return {
-        before: {
-          image: this.initialBeforeImage,
-          label: this.initialBeforeImage?this.initialBeforeLabel:'было'
-        },
-        after: {
-          image: this.initialAfterImage,
-          label: this.initialAfterImage?this.initialAfterLabel:'стало'
-        },
 				hideBeforeLabel: false,
 				hideAfterLabel: false,
 				baseWidth: 1200,
 				baseHeight: 460,
 				width: 1200,
-				height: 460
+				height: 460,
+        switcher: null
 			}
 		},
 
 		mounted () {
+      if(this.switcher = this.getParentSwitcher(this.$el)) {
+      	this.switcher.addEventListener('shown', () => {
+          this.resize()
+      	})
+      }
+
 			this.resize()
-  			window.addEventListener('resize', this.resize)
+			window.addEventListener('resize', this.resize)
 		},
 
 		computed: {
+			before () {
+				return {
+          image: this.initialBeforeImage,
+          label: this.initialBeforeLabel || 'было'
+        }
+			},
+
+			after () {
+				return {
+          image: this.initialAfterImage,
+          label: this.initialAfterLabel || 'стало'
+        }
+			},
+
 			container () {
 				return this.$el.querySelector('.comprasion')
 			},
@@ -145,104 +155,14 @@
 			resize () {
 				this.height = this.container.offsetWidth / this.baseWidth * this.baseHeight
 				this.reset()
-			}
+			},
+
+      getParentSwitcher (el) {
+        el = el || this.$el
+        if (el.className === undefined) return false
+        if (el.className.indexOf('uk-switcher') > -1) return el
+        return this.getParentSwitcher(el.parentNode)
+      }
 		}
 	}
 </script>
-
-<style lang="less">
-.comprasion__arrows {
-	text-align: center;
-	margin-bottom: 10px;
-	span {
-		width: 32px;
-		height: 21px;
-		display: inline-block;
-    	margin: 8px;
-		&:first-child {
-			background: url('../../img/icon-arrow-left.svg') no-repeat 50% 50%;
-		}
-		&:last-child {
-			background: url('../../img/icon-arrow-right.svg') no-repeat 50% 50%;
-		}
-	}
-    @media (max-width:959px) {
-		display: none;
-    }
-}
-
-.comprasion {
-	position: relative;
-	border-bottom: 1px solid #828281;
-	max-width: 100%;
-	margin: 0 0 30px;
-}
-
-.comprasion__before__mask,
-.comprasion__after__mask,
-.comprasion__after,
-.comprasion__before {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-position: 50% 50%;
-	background-size: cover;
-	background-color: rgba(255,255,255,0);
-}
-
-.comprasion__label {
-	position: absolute;
-	bottom: 0;
-	color: #cccccc;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1;
-	padding: 12px;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	&--before {
-		right: 0;
-	}
-	&--after {
-		left: 0;
-	}
-}
-
-.comprasion__handle {
-	position: absolute;
-	width: 18px;
-	height: 100%;
-	left: 50%;
-	top: 0;
-	margin-left: -9px;
-	cursor: move;
-	&:hover {
-		&:after {
-			background-color: darken(#d3924d, 10%);
-		}
-	}
-	&:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: -15px;
-		width: 100%;
-		height: 18px;
-		border-radius: 2px;
-		background-color: #d3924d;
-	}
-	&:before {
-		content: '';
-		left: 50%;
-		top: 0;
-		width: 1px;
-		height: 100%;
-		background-color: #cccccc;
-		position: absolute;
-	}
-}
-</style>
