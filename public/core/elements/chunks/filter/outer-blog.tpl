@@ -5,7 +5,13 @@
 				[[+filters]]
 			</div>
 		</form>
-		<div id="mse2_results" class="uk-grid-large uk-child-width-1-2@m" uk-grid >
+		{'pdoResources' | snippet : [
+			'resources' => 28,
+			'includeTVs' => 'image',
+			'tvPrefix' => '',
+			'tpl' => '@FILE chunks/filter/chosen-article.tpl'
+		]}
+		<div id="mse2_results" class="uk-grid-large uk-child-width-1-2@m" uk-grid uk-height-match="target: .article-item img">
 			[[+results]]
 		</div>
 	</div>
