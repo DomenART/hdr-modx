@@ -12254,6 +12254,178 @@ td.uk-text-break {
 #mse2_mfilter .btn_more {
   display: none !important;
 }
+.comprasion__header {
+  margin-bottom: 20px;
+}
+@media (max-width: 959px) {
+  .comprasion__header {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+}
+.comprasion__title {
+  color: #fefefe;
+  font-family: 'Museo Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.125;
+}
+@media (max-width: 959px) {
+  .comprasion__title {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+}
+@media (max-width: 639px) {
+  .comprasion__title {
+    margin-bottom: 30px;
+  }
+}
+.comprasion__select {
+  color: #cccccc;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  text-decoration: none;
+}
+.comprasion__select:hover {
+  color: #fff;
+  text-decoration: none;
+}
+@media (max-width: 639px) {
+  .comprasion__select {
+    font-size: 16px;
+  }
+}
+.comprasion-thumbs {
+  margin-top: 40px;
+}
+.comprasion-review {
+  margin: 10px 0;
+}
+.comprasion-review__title {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.comprasion-review__desc {
+  font-size: 14px;
+  color: #cccccc;
+  line-height: 1.9;
+}
+.comprasion-thumb {
+  cursor: pointer;
+}
+.comprasion-thumb__image {
+  background-color: #000;
+  margin-bottom: 12px;
+}
+.comprasion-thumb__image img {
+  width: 100%;
+  opacity: .6;
+}
+.comprasion-thumb.uk-active .comprasion-thumb__image img {
+  opacity: 1;
+}
+.comprasion-thumb__name {
+  font-size: 16px;
+  color: #cccccc;
+}
+.comprasion-thumb.uk-active .comprasion-thumb__name {
+  color: #ffffff;
+}
+.comprasion__arrows {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.comprasion__arrows span {
+  width: 32px;
+  height: 21px;
+  display: inline-block;
+  margin: 8px 20px;
+}
+.comprasion__arrows span:first-child {
+  background: url(img/icon-arrow-left.svg?a6382e727170477a3387746f965bd2b4) no-repeat 50% 50%;
+}
+.comprasion__arrows span:last-child {
+  background: url(img/icon-arrow-right.svg?aa139962880c1f913fed9f060a7624e8) no-repeat 50% 50%;
+}
+@media (max-width: 959px) {
+  .comprasion__arrows {
+    display: none;
+  }
+}
+.comprasion {
+  position: relative;
+  border-bottom: 1px solid #828281;
+  max-width: 100%;
+  margin: 0;
+}
+.comprasion__before__mask,
+.comprasion__after__mask,
+.comprasion__after,
+.comprasion__before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0);
+}
+.comprasion__label {
+  position: absolute;
+  bottom: 0;
+  color: #cccccc;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.comprasion__label--before {
+  right: 0;
+}
+.comprasion__label--after {
+  left: 0;
+}
+.comprasion__handle {
+  position: absolute;
+  width: 18px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  margin-left: -9px;
+  cursor: move;
+}
+.comprasion__handle:hover:after {
+  background-color: #be792f;
+}
+.comprasion__handle:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -15px;
+  width: 100%;
+  height: 18px;
+  border-radius: 2px;
+  background-color: #d3924d;
+}
+.comprasion__handle:before {
+  content: '';
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #cccccc;
+  position: absolute;
+}
 .menu__bg {
   position: fixed;
   left: -20px;
@@ -15362,6 +15534,136 @@ a.edit {
 }
 .chosen-article__more {
   color: #ffffff;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.masterclass-background {
+  background: linear-gradient(to bottom, #f7f7f4 200px, #ffffff 200px);
+}
+.masterclass-item {
+  margin-bottom: 20px;
+  border: 1px solid #eeeded;
+}
+.masterclass-item__promo {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+.masterclass-item__date {
+  display: inline-block;
+  float: right;
+  clear: right;
+  margin-bottom: 23px;
+  padding: 20px 12px 5px 12px;
+  background-color: #cc0000;
+  text-align: center;
+}
+.masterclass-item__date-first {
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+.masterclass-item__date-last {
+  float: right;
+  clear: right;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+}
+.masterclass-item__places {
+  display: inline-block;
+  margin-bottom: 10px;
+  float: right;
+  clear: right;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0.08px;
+}
+.masterclass-item__places span {
+  font-weight: 500;
+}
+.masterclass-item__hours {
+  display: inline-block;
+  margin-bottom: 14px;
+  float: right;
+  clear: right;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0.08px;
+}
+.masterclass-item__hours span {
+  font-weight: 500;
+}
+.masterclass-item__price {
+  display: inline-block;
+  margin-bottom: 87px;
+  float: right;
+  clear: right;
+  padding: 14px 14px 14px 27px;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333333;
+  font-size: 16px;
+  letter-spacing: 0.08px;
+}
+.masterclass-item__price span {
+  font-size: 30px;
+}
+.masterclass-item__invite {
+  display: inline-block;
+  float: left;
+  clear: both;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0.08px;
+}
+.masterclass-item__invite:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: rgba(48, 47, 47, 0.7);
+}
+.masterclass-item__description {
+  padding: 20px 50px 70px 20px;
+  background-color: #fafaf7;
+}
+.masterclass-item__photo {
+  margin-right: 12px;
+}
+.masterclass-item__photo img {
+  border-radius: 50%;
+}
+.masterclass-item__status {
+  margin-bottom: 14px;
+  color: #666666;
+  font-size: 14px;
+  letter-spacing: 0.07px;
+}
+.masterclass-item__name {
+  color: #333333;
+  letter-spacing: 0.09px;
+}
+.master-class-item__expert {
+  margin-bottom: 26px;
+}
+.masterclass-item__title {
+  margin-bottom: 34px;
+  font-size: 24px;
+  line-height: 1;
+}
+.masterclass-item__announcement {
+  margin-bottom: 53px;
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.125;
+}
+.masterclass-item__more {
   font-size: 14px;
   text-decoration: underline;
 }

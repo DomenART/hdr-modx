@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 211);
+/******/ 	return __webpack_require__(__webpack_require__.s = 206);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 211:
+/***/ 206:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73,7 +73,7 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var queryString = __webpack_require__(212);
+var queryString = __webpack_require__(207);
 
 if (typeof pdoPage == 'undefined') {
     pdoPage = { callbacks: {}, keys: {}, configs: {} };
@@ -437,14 +437,14 @@ if (typeof jQuery == 'undefined') {
 
 /***/ }),
 
-/***/ 212:
+/***/ 207:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strictUriEncode = __webpack_require__(213);
-var objectAssign = __webpack_require__(214);
-var decodeComponent = __webpack_require__(215);
+var strictUriEncode = __webpack_require__(208);
+var objectAssign = __webpack_require__(209);
+var decodeComponent = __webpack_require__(210);
 
 function encoderForArrayFormat(opts) {
 	switch (opts.arrayFormat) {
@@ -557,11 +557,7 @@ function keysSorter(input) {
 }
 
 exports.extract = function (str) {
-	var queryStart = str.indexOf('?');
-	if (queryStart === -1) {
-		return '';
-	}
-	return str.slice(queryStart + 1);
+	return str.split('?')[1] || '';
 };
 
 exports.parse = function (str, opts) {
@@ -577,7 +573,7 @@ exports.parse = function (str, opts) {
 		return ret;
 	}
 
-	str = str.trim().replace(/^[?#&]/, '');
+	str = str.trim().replace(/^(\?|#|&)/, '');
 
 	if (!str) {
 		return ret;
@@ -655,7 +651,7 @@ exports.stringify = function (obj, opts) {
 
 /***/ }),
 
-/***/ 213:
+/***/ 208:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -669,7 +665,7 @@ module.exports = function (str) {
 
 /***/ }),
 
-/***/ 214:
+/***/ 209:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -767,7 +763,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
-/***/ 215:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
