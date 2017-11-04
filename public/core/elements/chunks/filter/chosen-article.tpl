@@ -15,7 +15,7 @@
                 </div>
                 <div>
                     <a href="{$uri}" class="chosen-article__title">
-                        {$pagetitle}
+                        <span>{$pagetitle}</span>
                     </a>
                 </div>
                 <div class="uk-text-right">

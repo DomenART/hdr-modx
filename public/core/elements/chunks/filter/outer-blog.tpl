@@ -1,18 +1,21 @@
 <div class="row msearch2" id="mse2_mfilter">
 	<div class="uk-container">
-		<form action="[[~[[*id]]]]" method="post" id="mse2_filters">
+		<form action="{$_modx->resource.uri}" method="post" id="mse2_filters">
 			<div class="portfolio__filter uk-flex uk-flex-between uk-flex-middle uk-flex-wrap">
-				[[+filters]]
+				{$filters}
 			</div>
 		</form>
 		{'pdoResources' | snippet : [
-			'resources' => 28,
-			'includeTVs' => 'image',
+			'parents' => 'page.blog' | config,
+			'includeTVs' => 'image,favorite',
 			'tvPrefix' => '',
-			'tpl' => '@FILE chunks/filter/chosen-article.tpl'
+			'tpl' => '@FILE chunks/filter/chosen-article.tpl',
+			'where' => [
+				'favorite' => 1
+			]
 		]}
 		<div id="mse2_results" class="uk-grid-large uk-child-width-1-2@m" uk-grid uk-height-match="target: .article-item img">
-			[[+results]]
+			{$results}
 		</div>
 	</div>
 	<div class="paging">
@@ -22,6 +25,6 @@
 		</span>
 	</div>
 	<div class="mse2_pagination">
-		[[!+page.nav]]
+		{'page.nav' | placeholder}
 	</div>
 </div>
