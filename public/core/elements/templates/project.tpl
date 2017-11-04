@@ -1,28 +1,33 @@
 {extends 'file:templates/master.tpl'}
+
+{block 'substrate'}{/block}
+
 {block 'content'}
-<header class="project-header" style="background: url('{$_modx->resource['image']}') no-repeat 50% 50%; background-size: cover">
-	<div class="header-substrate"></div>
-	<div class="uk-container">
-		<div class="breadcrumb breadcrumb--white uk-flex uk-flex-center">
-		    {'pdoCrumbs' | snippet : [
-		        'showHome' => '1',
-		        'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
-		    ]}
-		</div>
-		<h1 class="pagetitle pagetitle--white pagetitle--project">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
-		<div class="project-bar uk-flex uk-flex-wrap uk-flex-middle">
-			{'pdoNeighbors' | snippet : [
-				'tplPrev' => '@INLINE <span class="link-prev"><a href="{$uri}" class="project-bar__links"><img src="assets/template/img/project-arr-left.svg" alt=""><span>предыдущий</span></a></span>',
-				'tplNext' => '@INLINE <span class="link-next"><a href="{$uri}" class="project-bar__links"><img src="assets/template/img/project-arr-right.svg" alt=""><span>следующий</span></a></span>',
-				'tplWrapper' => '@INLINE <div class="project-bar__control uk-flex uk-flex-middle uk-flex-between uk-flex-left@s">{$prev}{$next}</div>'
-			]}
-			<div class="project-bar__info uk-flex uk-flex-wrap uk-flex-center uk-flex-left@s">
-				<div class="project-bar__year">
-					{$publishedon | date_format : '%Y'}
-				</div>
-				<div class="project-bar__desc">
-					{$_modx->resource.introtext | nl2br }
-				</div>
+<header class="project-header uk-flex uk-flex-column uk-flex-between uk-flex-middle" style="background: url('{$_modx->resource['image']}') no-repeat 50% 50%; background-size: cover">
+	<div class="breadcrumb breadcrumb--white uk-flex uk-flex-center">
+		{'pdoCrumbs' | snippet : [
+			'showHome' => '1',
+			'tplWrapper' => '@INLINE <ul class="uk-breadcrumb uk-flex-center">{$output}</ul>',
+			'where' => [
+				'class_key:!=' => 'TicketsSection'
+			]
+		]}
+	</div>
+
+	<h1 class="pagetitle pagetitle--white pagetitle--project">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
+	
+	<div class="project-bar uk-flex uk-flex-middle">
+		{'pdoNeighbors' | snippet : [
+			'tplPrev' => '@INLINE <a href="{$uri}" class="project-bar__links uk-flex uk-flex-center uk-flex-column"><img src="assets/template/img/project-arr-left.svg" alt=""><span>предыдущий</span></a>',
+			'tplNext' => '@INLINE <a href="{$uri}" class="project-bar__links uk-flex uk-flex-center uk-flex-column"><img src="assets/template/img/project-arr-right.svg" alt=""><span>следующий</span></a>',
+			'tplWrapper' => '@INLINE <div class="project-bar__control uk-flex uk-flex-between">{$prev}{$next}</div>'
+		]}
+		<div class="project-bar__info uk-flex uk-flex-middle">
+			<div class="project-bar__year">
+				{$publishedon | date_format : '%Y'}
+			</div>
+			<div class="project-bar__desc">
+				{$_modx->resource.introtext | nl2br }
 			</div>
 		</div>
 	</div>

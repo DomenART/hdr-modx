@@ -6,6 +6,10 @@
 <body>
 	<div id="app" class="wrapper">
 		{include 'file:partials/header.tpl'}
+		
+		{block 'substrate'}
+			<div class="header-substrate"></div>
+		{/block}
 
 		{block 'content'}
 			<div class="uk-container">

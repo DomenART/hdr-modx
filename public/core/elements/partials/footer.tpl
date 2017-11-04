@@ -1,7 +1,7 @@
 <footer class="uk-container">
     <section class="footer-first">
         <div class="uk-grid" uk-grid>
-            <div class="uk-width-2-5">
+            <div class="uk-width-2-5@m">
                 <a href="/"><img src="assets/template/img/logo.png" alt="" class="footer__logo"></a>
                 <ul class="footer__rights">
                     <li><a href="#">Пользовательское соглашение</a></li>
@@ -9,9 +9,9 @@
                 </ul>
             </div>
 
-            <div class="uk-width-3-5">
+            <div class="uk-width-3-5@m">
                 <div class="uk-grid" uk-grid>
-                    <div class="uk-width-expand">
+                    <div class="uk-width-1-2@s uk-width-expand@m">
                         <div class="footer__title">Наш офис</div>
                         <table class="footer__contacts">
                             <tr>
@@ -37,7 +37,7 @@
                         </table>
                     </div>
 
-                    <div class="uk-width-1-4">
+                    <div class="uk-width-1-2@s uk-width-1-4@m">
                         <div class="footer__title">Время работы</div>
                         <table class="footer__contacts">
                             <tr>
@@ -53,7 +53,7 @@
                         </table>
                     </div>
 
-                    <div class="uk-width-1-4">
+                    <div class="uk-width-1-2@s uk-width-1-4@m">
                         <div class="footer__title">Портфолио</div>
                         <ul class="footer__menu">
                             <li><a href="#">Кафе, рестораны и т.д.</a></li>
@@ -69,14 +69,14 @@
 
     <section class="footer-second">
         <div class="uk-grid uk-flex-middle" uk-grid>
-            <div class="uk-width-2-5">
+            <div class="uk-width-2-5@m">
                 <div class="footer__copyright">©2017, Студия дизайна GERABYTE: дизайн-проекты квартир, загородных домов, офисов, коммерческой недвижимости, общественных заведений, магазинов, ресторанов и кафе</div>
                 <div></div>
             </div>
 
-            <div class="uk-width-3-5">
+            <div class="uk-width-3-5@m">
                 <div class="footer__right uk-flex uk-flex-between uk-flex-middle">
-                    <div class="uk-flex uk-flex-between uk-flex-middle">
+                    <div class="uk-flex uk-flex-between uk-flex-middle uk-width-1-1 uk-width-auto@s">
                         <a href="#" class="footer__sitemap">Карта сайта</a>
                         <div class="footer__counters">
                             [^t^]

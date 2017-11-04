@@ -27,3 +27,4 @@ package-lock.json
 .vscode/
 .directory
 composer-lock.json
+.DS_Store

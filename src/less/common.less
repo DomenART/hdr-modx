@@ -62,14 +62,13 @@
         padding: 0;
     }
     li {
-
         color: #666666;
-		font-weight: 400;
 		letter-spacing: 1px;
+		font-weight: 300;
         a {
         	font-size: 18px;
         	color: #666666;
-			font-weight: 400;
+			text-decoration: underline;
 	        &:hover {
 	        	color: #666666;
 	            text-decoration: underline;
@@ -79,7 +78,13 @@
     .uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
         content: '→';
 		margin: 0 9px;
+		font-size: 12px;
+		vertical-align: middle;
     }
+	@media (max-width: @breakpoint-small-max) {
+		padding: 15px 0;
+		margin-bottom: 30px;
+	}
 	@media (max-width: @breakpoint-xsmall-max) {
 		display: none;
 	}
@@ -87,7 +92,7 @@
 
 .breadcrumb--white {
 	&::after {
-		background-color: #fff;
+		background-color: rgba(255,255,255,.4);
 	}
 	li {
 		color: #fff;

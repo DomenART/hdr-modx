@@ -1,4 +1,7 @@
 {extends 'file:templates/master.tpl'}
+
+{block 'substrate'}{/block}
+
 {block 'content'}
 	{set $slideshow = ($_modx->resource.slideshow | fromJSON)}
 	<section class="slideshow" id="slideshow" uk-slideshow="animation: push">
@@ -155,23 +158,23 @@
 				<div class="uk-width-1-2@m">
 					<div class="uk-grid uk-grid-collapse">
 						<div class="uk-width-1-2">
-							<a href="" class="life-item">
+							<a href="{'page.reviews' | config | url}" class="life-item">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title">Отзывы</span>
 							</a>
-							<a href="" class="life-item uk-cover-container">
+							<a href="{'page.jobs' | config | url}" class="life-item uk-cover-container">
 								<img src="assets/template/img/life-3.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title">Вакансии</span>
 							</a>
 						</div>
 						<div class="uk-width-1-2">
-							<a href="" class="life-item uk-cover-container">
+							<a href="{'page.paintings' | config | url}" class="life-item uk-cover-container">
 								<img src="assets/template/img/life-1.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title life-item__title--wide">Картины&nbsp;в<br> интерьер</span>
 							</a>
-							<a href="" class="life-item uk-cover-container">
+							<a href="{'page.about' | config | url}" class="life-item uk-cover-container">
 								<img src="assets/template/img/life-4.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__square uk-flex uk-flex-middle uk-flex-center">
@@ -184,12 +187,12 @@
 				<div class="uk-width-1-2@m">
 					<div class="uk-grid uk-grid-collapse">
 						<div class="uk-width-1-2">
-							<a href="" class="life-item uk-cover-container">
+							<a href="{'page.ddchina' | config | url}" class="life-item uk-cover-container">
 								<img src="assets/template/img/life-2.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__desc">Дни дизайна в Китае</span>
 							</a>
-							<a href="" class="life-item life-item--light">
+							<a href="{'page.internship' | config | url}" class="life-item life-item--light">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__mc uk-flex uk-flex-column uk-flex-middle uk-flex-center">
 									<span class="life-item__mc__abbr">МК</span>
@@ -202,7 +205,7 @@
 							</a>
 						</div>
 						<div class="uk-width-1-2">
-							<a href="" class="life-item">
+							<a href="{'page.blog' | config | url}" class="life-item">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__blog">

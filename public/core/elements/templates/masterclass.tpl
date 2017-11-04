@@ -1,7 +1,7 @@
 {extends 'file:templates/master.tpl'}
+
 {block 'content'}
 <header class="header-beige">
-	<div class="header-substrate"></div>
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
 			{'pdoCrumbs' | snippet : [
