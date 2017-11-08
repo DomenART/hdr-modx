@@ -16,11 +16,11 @@
 	margin: 0 auto 113px;
 	text-align: center;
 	color: #373736;
-	font-family: @font-alt;
+	font-family: $font-alt;
 	font-size: 48px;
 	font-weight: 500;
 	letter-spacing: 15px;
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		font-size: 35px;
 		margin-top: 50px;
 		margin-bottom: 50px;
@@ -81,11 +81,11 @@
 		font-size: 12px;
 		vertical-align: middle;
     }
-	@media (max-width: @breakpoint-small-max) {
+	@media (max-width: $breakpoint-small-max) {
 		padding: 15px 0;
 		margin-bottom: 30px;
 	}
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		display: none;
 	}
 }
@@ -106,31 +106,6 @@
 	.uk-breadcrumb > :nth-child(n+2):not(.uk-first-column)::before {
 		color: #fff;
 	}
-}
-
-.control-bar(@position-type) {
-	position: @position-type;
-	width: 1600px;
-	max-width: 100%;
-	left: 50%;
-	bottom: 0;
-	margin-left: -800px;
-	background-color: #fff;
-	overflow: hidden;
-    padding: 32px 10px;
-    box-sizing: border-box;
-    @media (max-width: 1600px) {
-        margin-left: 0;
-        left: 0;
-    }
-    @media (max-width: @breakpoint-small-max) {
-        padding-left: 44px;
-        padding-right: 44px;
-    }
-    @media (max-width: @breakpoint-xsmall-max) {
-        padding: 12px 0;
-    }
-
 }
 
 .button-intro {
@@ -194,10 +169,10 @@
     text-align: center;
     padding: 95px 0 60px;
     background-color: #4d4d4c;
-    @media (max-width:@breakpoint-small-max) {
+    @media (max-width:$breakpoint-small-max) {
         padding: 36px 0;
     }
-    @media (max-width:@breakpoint-xsmall-max) {
+    @media (max-width:$breakpoint-xsmall-max) {
         padding: 25px 0;
     }
 }
@@ -221,7 +196,7 @@
 		background-color: rgba(0, 0, 0, 0.2);
 		color: #fff;
 	}
-    @media (max-width: @breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-xsmall-max) {
         padding: 5px 45px;
     }
 }
@@ -231,7 +206,7 @@
 	padding: 40px 100px 70px;
 	background-color: #cc0000;
 	width: 100%;
-    @media (max-width: @breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-xsmall-max) {
         padding: 40px 18px;
     }
 }
@@ -248,7 +223,7 @@
 	margin-bottom: 85px;
 	font-size: 24px;
 	color: #fff;
-    @media (max-width: @breakpoint-xsmall-max) {
+    @media (max-width: $breakpoint-xsmall-max) {
 		margin-bottom: 38px;
 		font-size: 18px;
 		line-height: 1.35;
@@ -310,7 +285,7 @@
         }
 	}
 
-    @media (max-width:@breakpoint-small-max) {
+    @media (max-width:$breakpoint-small-max) {
 		transform: none;
 		left: auto;
 		top: auto;
@@ -318,7 +293,7 @@
 		margin: 10px auto;
 		position: relative;
     }
-    @media (max-width:@breakpoint-xsmall-max) {
+    @media (max-width:$breakpoint-xsmall-max) {
 
     }
 }
@@ -350,7 +325,7 @@
             transition: opacity .3s ease, transform .5s ease;
         }
     }
-    @media (max-width:@breakpoint-xsmall-max) {
+    @media (max-width:$breakpoint-xsmall-max) {
 		min-height: 215px;
     }
 }
@@ -368,7 +343,7 @@
 
 .portfolio-item__title {
     color: #ffffff;
-    font-family: @font-alt;
+    font-family: $font-alt;
     font-size: 30px;
     font-weight: 500;
     line-height: 1.125;
@@ -378,7 +353,7 @@
     position: relative;
     opacity: 0;
     transform: translateY(-10px);
-    @media (max-width:@breakpoint-xsmall-max) {
+    @media (max-width:$breakpoint-xsmall-max) {
 		margin-top: 0;
 		font-size: 24px;
     }
@@ -466,7 +441,7 @@
 	padding-left: 43px;
 	padding-bottom: 15px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-	font-family: @font-alt;
+	font-family: $font-alt;
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 1.08;
@@ -486,7 +461,7 @@
 	min-height: 225px;
 	padding: 0 27px 0 28px;
 	text-align: center;
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		text-align: left;
 	}
 }
@@ -545,7 +520,7 @@
 
 .comprasion__header {
 	margin-bottom: 20px;
-    @media (max-width:959px) {
+    @media (max-width:$breakpoint-small-max) {
 		-ms-flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
@@ -559,11 +534,11 @@
 	font-size: 24px;
 	font-weight: 500;
 	line-height: 1.125;
-    @media (max-width:959px) {
+    @media (max-width:$breakpoint-small-max) {
 		width: 100%;
 		margin-bottom: 22px;
     }
-    @media (max-width:639px) {
+    @media (max-width:$breakpoint-xsmall-max) {
 		margin-bottom: 30px;
     }
 }
@@ -578,7 +553,7 @@
 		color: #fff;
 		text-decoration: none;
 	}
-    @media (max-width:639px) {
+    @media (max-width:$breakpoint-xsmall-max) {
 		font-size: 16px;
     }
 }
@@ -642,7 +617,7 @@
 			background: url('../img/icon-arrow-right.svg') no-repeat 50% 50%;
 		}
 	}
-	@media (max-width:959px) {
+	@media (max-width: $breakpoint-small-max) {
 		display: none;
 	}
 }

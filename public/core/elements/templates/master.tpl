@@ -5,10 +5,12 @@
 </head>
 <body>
 	<div id="app" class="wrapper">
+		{include 'file:partials/toolbar.tpl'}
+
 		{include 'file:partials/header.tpl'}
 		
 		{block 'substrate'}
-			<div class="header-substrate"></div>
+			<div class="header-substrate js-toolbar-intro"></div>
 		{/block}
 
 		{block 'content'}

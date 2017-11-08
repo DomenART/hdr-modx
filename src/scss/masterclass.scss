@@ -15,7 +15,6 @@
 }
 
 .masterclass-item__date {
-    display: inline-block;
     float: right;
     clear: right;
     margin-bottom: 23px;
@@ -40,7 +39,6 @@
 }
 
 .masterclass-item__places {
-    display: inline-block;
     margin-bottom: 10px;
     float: right;
     clear: right;
@@ -55,7 +53,7 @@
 }
 
 .masterclass-item__hours {
-    display: inline-block;
+    display: inlin-block;
     margin-bottom: 14px;
     float: right;
     clear: right;
@@ -70,7 +68,6 @@
 }
 
 .masterclass-item__price {
-    display: inline-block;
     margin-bottom: 87px;
     float: right;
     clear: right;
@@ -85,7 +82,6 @@
 }
 
 .masterclass-item__invite {
-    display: inline-block;
     float: left;
     clear: both;
     padding: 12px;

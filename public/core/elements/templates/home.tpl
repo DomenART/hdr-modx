@@ -4,7 +4,7 @@
 
 {block 'content'}
 	{set $slideshow = ($_modx->resource.slideshow | fromJSON)}
-	<section class="slideshow" id="slideshow" uk-slideshow="animation: push">
+	<section class="slideshow js-toolbar-intro" id="slideshow" uk-slideshow="animation: push">
 		<ul class="slideshow__content uk-slideshow-items">
 			{foreach $slideshow as $row}
 				<li class="slide uk-flex uk-flex-middle uk-flex-center">

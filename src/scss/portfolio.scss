@@ -86,7 +86,7 @@
 	top: 60%;
 	left: 65%;
 	transform: translateY(-50%);
-	@media (max-width: @breakpoint-small-max) {
+	@media (max-width: $breakpoint-small-max) {
 		top: 100%;
 		left: 50%;
 		transform: translateX(-50%);

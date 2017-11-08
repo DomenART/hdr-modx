@@ -20,6 +20,8 @@
     "graceful-fs": "^4.1.11",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "vue": "^2.4.4",
     "vue-loader": "^13.0.5",

@@ -3,7 +3,7 @@ require.context('../img', true)
 require.context('../fonts', true)
 
 /* import styles */
-import '../less/main.less'
+import '../scss/main.scss'
 
 /*--------------------------------------------------*/
 
@@ -32,6 +32,21 @@ import jQuery from 'jquery'
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
+
+/**
+ * toolbar
+ */
+var toolbar = document.querySelector('.toolbar')
+if (toolbar) {
+	let intro = document.querySelector('.js-toolbar-intro')
+
+	window.addEventListener('scroll', (e) => {
+		if (window.scrollY + toolbar.offsetHeight + toolbar.offsetTop <= intro.offsetHeight + intro.offsetTop + 5)
+			toolbar.classList.add('toolbar--transparent')
+		else
+			toolbar.classList.remove('toolbar--transparent')
+	})
+}
 
 /**
  * sticky slide bar

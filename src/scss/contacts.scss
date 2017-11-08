@@ -11,7 +11,7 @@
 	min-height: 600px;
 	position: relative;
 	margin-left: -100px;
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		display: none;
 	}
 }
@@ -29,7 +29,7 @@
 	&::before {
 		content: '';
 		width: 1px;
-		height: ~"calc(100% - 36px)";
+		height: calc(100% - 36px);
 		position: absolute;
 		top: 18px;
 		left: 50%;
@@ -41,7 +41,7 @@
 			color: #fff;
 		}
 	}
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		position: static;
 		width: 100%;
 		height: auto;
@@ -69,14 +69,14 @@
 	box-sizing: border-box;
 	padding: 50px 98px 119px;
 	background-color: #f7f7f4;
-	@media (max-width: @breakpoint-medium-max) {
+	@media (max-width: $breakpoint-medium-max) {
 		left: 0;
 	}
-	@media (max-width: @breakpoint-small-max) {
+	@media (max-width: $breakpoint-small-max) {
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		position: static;
 		width: 100%;
 		padding: 10px;
@@ -93,8 +93,8 @@
 }
 
 .contacts-placeholder {
-	color: #999999;
 	font-family: Rubik;
+	color: #999999;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 36px;
@@ -117,16 +117,20 @@
 
 .contacts-input, .contacts-textarea {
 	&::-webkit-input-placeholder {
-		.contacts-placeholder;
+        color: #999999;
+        font-size: 16px;
 	}
 	&::-moz-placeholder {
-		.contacts-placeholder;
+        color: #999999;
+        font-size: 16px;
 	}
 	&:-moz-placeholder {
-		.contacts-placeholder;
+        color: #999999;
+        font-size: 16px;
 	}
 	&:-ms-input-placeholder {
-		.contacts-placeholder;
+        color: #999999;
+        font-size: 16px;
 	}
 }
 

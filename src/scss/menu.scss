@@ -11,11 +11,11 @@
 	transition: all ease .5s;
     background: #fff;
 
-	@media (max-width: @breakpoint-small-max) {
+	@media (max-width: $breakpoint-small-max) {
 		width: 110px;
 		left: -10px;
 	}
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		display: none;
 	}
 }
@@ -31,7 +31,7 @@
 	transition: all ease .5s;
 	background-color: #333;
 
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		display: none;
 	}
 }
@@ -51,13 +51,13 @@
     left: -40px;
 	top: 50%;
 	transition: all ease .5s;
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		display: none;
 	}
 }
 
 .menu__toggle {
-	@media (min-width: @breakpoint-small) {
+	@media (min-width: $breakpoint-small) {
 		position: fixed;
 		z-index: 410;
 		margin-top: -10px;
@@ -67,10 +67,10 @@
 		transform: translateY(-50%);
 		transition: all ease .5s;
 	}
-	@media (max-width: @breakpoint-small-max) {
+	@media (max-width: $breakpoint-small-max) {
 		left: 0;
 	}
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		cursor: pointer;
 		position: fixed;
 		left: 50px;
@@ -78,7 +78,7 @@
 	}
 }
 .menu__toggle__logo {
-	@media (min-width: @breakpoint-small) {
+	@media (min-width: $breakpoint-small) {
 		width: 100px;
 		height: 65px;
 		background: url('../img/logo-small.png') no-repeat 50% 50%;
@@ -115,17 +115,17 @@
 		left: 50%;
 		margin-left: -15px;
 		&:nth-child(1) {
-			top: ~"calc(50% - 7px)";
+			top: calc(50% - 7px);
 		}
 		&:nth-child(2) {
 			top: 50%;
 		}
 		&:nth-child(3) {
-			top: ~"calc(50% + 7px)";
+			top: calc(50% + 7px);
 		}
 	}
 
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		left: 0;
 		margin-left: 0;
 	}
@@ -154,7 +154,7 @@
 	left: 197px;
 	opacity: 0;
 	visibility: hidden;
-	max-height: ~"calc(100% - 58px)";
+	max-height: 100%;
 	margin-top: 28px;
 	overflow: auto;
 	padding-left: 20px;
@@ -181,12 +181,12 @@
 		}
 	}
 
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		z-index: 520;
 		left: 50px;
 		top: 50px;
 		right: 0;
-		max-height: ~"calc(100% - 50px)";
+		max-height: calc(100% - 50px);
 		transform: none;
 		background-color: #333;
 		padding-left: 50px;
@@ -195,7 +195,7 @@
 	}
 }
 .menu__close {
-	@media (max-width: @breakpoint-xsmall-max) {
+	@media (max-width: $breakpoint-xsmall-max) {
 		width: 32px;
 		height: 32px;
 		border: 1px solid #c6bfb5;
@@ -249,16 +249,16 @@
 	}
 	.menu__bg {
 		left: 0;
-		@media (max-width: @breakpoint-small-max) {
+		@media (max-width: $breakpoint-small-max) {
 			left: 30px;
 		}
 	}
 	.menu__toggle {
 		left: 68px;
-		@media (max-width: @breakpoint-small-max) {
+		@media (max-width: $breakpoint-small-max) {
 			left: 40px;
 		}
-		@media (max-width: @breakpoint-xsmall-max) {
+		@media (max-width: $breakpoint-xsmall-max) {
 			left: 50px;
 		}
 	}
@@ -278,10 +278,10 @@
 	.menu__toggle {
 		left: 68px;
 
-		@media (max-width: @breakpoint-small-max) {
+		@media (max-width: $breakpoint-small-max) {
 			left: 40px;
 		}
-		@media (max-width: @breakpoint-xsmall-max) {
+		@media (max-width: $breakpoint-xsmall-max) {
 			display: none;
 		}
 	}
@@ -293,19 +293,17 @@
 
 	.menu__bg {
 	    width: 650px;
-	    height: ~"calc(100% - 58px)";
-	    margin-top: 28px; // половина от отступа сверху- из-за центрирования
+	    height: 100%;
 	    background-color: #333;
 		left: 0;
 
-		@media (max-width: @breakpoint-small-max) {
+		@media (max-width: $breakpoint-small-max) {
 			left: 30px;
 		}
 	}
 
 	.menu__title-bg {
-	    height: ~"calc(100% - 58px)";
-	    margin-top: 28px; // половина от отступа сверху- из-за центрирования
+	    height: 100%;
     	background-color: #1e1e1e;
 	}
 	.menu__title-text {

@@ -3,7 +3,7 @@
 {block 'substrate'}{/block}
 
 {block 'content'}
-<header class="project-header uk-flex uk-flex-column uk-flex-between uk-flex-middle" style="background: url('{$_modx->resource['image']}') no-repeat 50% 50%; background-size: cover">
+<header class="project-header uk-flex uk-flex-column uk-flex-between uk-flex-middle js-toolbar-intro" style="background: url('{$_modx->resource['image']}') no-repeat 50% 50%; background-size: cover">
 	<div class="breadcrumb breadcrumb--white uk-flex uk-flex-center">
 		{'pdoCrumbs' | snippet : [
 			'showHome' => '1',
