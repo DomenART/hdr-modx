@@ -1,11 +1,9 @@
 <article class="chosen-article">
     <div class="uk-grid uk-child-width-1-2@s">
         <div>
-            <div class="chosen-article__image">
-                <a href="{$uri}">
-                    <img src="{$image}" alt="">
-                </a>
-            </div>
+            <a href="{$uri}"class="chosen-article__image uk-cover-container">
+                <img src="{$image}" class="uk-cover" alt="">
+            </a>
         </div>
         <div>
             <div class="chosen-article__description">

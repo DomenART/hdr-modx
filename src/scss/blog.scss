@@ -5,6 +5,9 @@
 	.btn {
 		display: none;
 	}
+	#mse2_results {
+		margin-bottom: 0;
+	}
 }
 
 .chosen-article {
@@ -13,14 +16,12 @@
 }
 
 .chosen-article__image {
-	height: 100%;
-	img {
-		height: 100%;
-	}
+	display: block;
+	height: 403px;
 }
 
 .chosen-article__description {
-	padding: 55px 35px 26px 70px;
+	padding: 55px 35px 20px 52px;
 }
 
 .chosen-article__date {

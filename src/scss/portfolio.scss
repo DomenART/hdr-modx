@@ -35,12 +35,14 @@
 }
 
 .filter__select {
+	height: 37px;
 	padding-right: 30px !important;
 	border: 2px solid #333333;
 	background-color: rgba(229, 229, 229, 0);
 	position: relative;
 	background-image: url('../img/select-icon.svg') !important;
-	background-position: 98% !important;
+	background-position: 95.5% !important;
+	font-size: 16px;
 }
 
 .portfolio-pool {
