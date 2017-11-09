@@ -5,8 +5,8 @@
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
 			{'pdoCrumbs' | snippet : [
-			'showHome' => '1',
-			'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
+				'showHome' => '1',
+				'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
 			]}
 		</div>
 		<h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
@@ -15,13 +15,12 @@
 </header>
 <main class="masterclass-background">
     <div class="uk-container">
-        <pre>
         {'msProducts' | snippet : [
-            'tpl' => '@FILE chunks/items/masterclass1.tpl',
-            'limit' => 2,
-            'showLog' => true,
+            'tpl' => '@FILE chunks/items/masterclass.tpl',
+            'limit' => 0,
+			'sortby' => '{ "date":"DESC" }',
+			'sortbyOptions' => 'date:date'
         ]}
-        </pre>
     </div>
 </main>
 {/block}
