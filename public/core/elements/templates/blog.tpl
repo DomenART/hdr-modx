@@ -16,7 +16,7 @@
 <div class="blog-pool">
 	{'!mFilter2' | snippet : [
 		'parents' => $_modx->resource.id,
-		'limit' => 4,
+		'limit' => 8,
 		'ajaxMode' => 'button',
 		'tplOuter' => '@FILE chunks/filter/outer-blog.tpl',
 		'tpls' => '@FILE chunks/items/article-item.tpl',

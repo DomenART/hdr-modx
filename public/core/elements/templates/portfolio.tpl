@@ -16,7 +16,7 @@
 <div class="portfolio-pool">
 	{'!mFilter2' | snippet : [
 		'parents' => $_modx->resource.id,
-		'limit' => 4,
+		'limit' => 8,
 		'ajaxMode' => 'button',
 		'ajaxTplMore' => '@INLINE <div class="portfolio-pool__control uk-flex uk-flex-around uk-flex-center@s uk-flex-middle uk-flex-wrap"><button type="button" class="uk-button button-intro button-intro--portfolio js-portfolio-more">Показать ещё<span class="button-intro__arrow"></span></button><button type="button" class="view-all view-all--portfolio js-portfolio-more-all">показать все</button></div>',
 		'paginator' => 'pdoPage@portfolioPaginator',
