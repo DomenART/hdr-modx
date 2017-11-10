@@ -34,7 +34,7 @@
 
 		data () {
 			return {
-                events: JSON.parse(this.initialEvents),
+                events: this.initialEvents?JSON.parse(this.initialEvents):[],
                 weekStartOn: 1,
                 curYear: new Date().getFullYear(),
                 curMonth: new Date().getMonth(),
