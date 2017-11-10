@@ -7,10 +7,7 @@
 	<div class="breadcrumb breadcrumb--white uk-flex uk-flex-center">
 		{'pdoCrumbs' | snippet : [
 			'showHome' => '1',
-			'tplWrapper' => '@INLINE <ul class="uk-breadcrumb uk-flex-center">{$output}</ul>',
-			'where' => [
-				'class_key:!=' => 'TicketsSection'
-			]
+			'tplWrapper' => '@INLINE <ul class="uk-breadcrumb uk-flex-center">{$output}</ul>'
 		]}
 	</div>
 

@@ -27,8 +27,8 @@
 		'includeTVs' => 'image',
 		'tplFilter.outer.resource|publishedon' => '@FILE chunks/filter/radio.tpl',
 		'tplFilter.row.resource|publishedon' => '@FILE chunks/filter/input.tpl',
-		'tplFilter.outer.resource|parent' => '@FILE chunks/filter/select.tpl',
-		'tplFilter.row.resource|parent' => '@FILE chunks/filter/option.tpl',
+		'tplFilter.outer.tv|category' => '@FILE chunks/filter/select.tpl',
+		'tplFilter.row.tv|category' => '@FILE chunks/filter/option.tpl',
 		'where' => ['class_key' => 'Ticket']
 	]}
 </div>
