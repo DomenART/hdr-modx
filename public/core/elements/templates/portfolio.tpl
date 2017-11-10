@@ -22,7 +22,7 @@
 		'paginator' => 'pdoPage@portfolioPaginator',
 		'tplOuter' => '@FILE chunks/filter/outer-portfolio.tpl',
 		'tpls' => '@FILE chunks/items/portfolio-item.tpl',
-		'filters' => 'publishedon:year,parent:categories',
+		'filters' => 'publishedon:year,tv|category:default',
 		'suggestionsRadio' => 'resource|publishedon,tv|category',
 		'includeTVs' => 'image',
 		'tplFilter.outer.resource|publishedon' => '@FILE chunks/filter/radio.tpl',
