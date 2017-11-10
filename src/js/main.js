@@ -13,12 +13,17 @@ import '../scss/main.scss'
 import Vue from 'vue'
 import comprasion from './components/comprasion.vue'
 import comprasionHome from './components/comprasion-home.vue'
+import calendar from './components/calendar.vue'
 
 Vue.component('comprasion', comprasion)
 Vue.component('comprasion-home', comprasionHome)
+Vue.component('calendar', calendar)
 
 var app = new Vue({
-	el: '#app'
+	el: '#app',
+	moment () {
+		return moment()
+	}
 })
 
 /**
