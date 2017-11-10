@@ -4,8 +4,8 @@
             <div class="uk-width-2-5@m">
                 <a href="/"><img src="assets/template/img/logo.png" alt="" class="footer__logo"></a>
                 <ul class="footer__rights">
-                    <li><a href="#">Пользовательское соглашение</a></li>
-                    <li><a href="#">Политика обработки персональных данных</a></li>
+                    <li><a href="{'page.agreement' | config | url}">Пользовательское соглашение</a></li>
+                    <li><a href="{'page.policy' | config | url}">Политика обработки персональных данных</a></li>
                 </ul>
             </div>
 
@@ -32,7 +32,7 @@
                             </tr>
                             <tr>
                                 <td>E-mail:</td>
-                                <td><a href="mailto:info@gerabyte.ru">info@gerabyte.ru</a></td>
+                                <td><a href="mailto:{'site.email' | config}">{'site.email' | config}</a></td>
                             </tr>
                         </table>
                     </div>
@@ -55,12 +55,11 @@
 
                     <div class="uk-width-1-2@s uk-width-1-4@m">
                         <div class="footer__title">Портфолио</div>
-                        <ul class="footer__menu">
-                            <li><a href="#">Кафе, рестораны и т.д.</a></li>
-                            <li><a href="#">Современные</a></li>
-                            <li><a href="#">Прованс</a></li>
-                            <li><a href="#">Классические</a></li>
-                        </ul>
+                        {'pdoMenu' | snippet : [
+                            'outerClass' => 'footer__menu',
+                            'parents' => 'page.portfolio' | config,
+                            'level' => 0
+                        ]}
                     </div>
                 </div>
             </div>
@@ -70,16 +69,18 @@
     <section class="footer-second">
         <div class="uk-grid uk-flex-middle" uk-grid>
             <div class="uk-width-2-5@m">
-                <div class="footer__copyright">©2017, Студия дизайна GERABYTE: дизайн-проекты квартир, загородных домов, офисов, коммерческой недвижимости, общественных заведений, магазинов, ресторанов и кафе</div>
+                <div class="footer__copyright">
+                    {'site.copyright' | config}
+                </div>
                 <div></div>
             </div>
 
             <div class="uk-width-3-5@m">
                 <div class="footer__right uk-flex uk-flex-between uk-flex-middle">
                     <div class="uk-flex uk-flex-between uk-flex-middle uk-width-1-1 uk-width-auto@s">
-                        <a href="#" class="footer__sitemap">Карта сайта</a>
+                        <a href="{'page.sitemap' | config | url}" class="footer__sitemap">Карта сайта</a>
                         <div class="footer__counters">
-                            [^t^]
+                            {'site.counters' | config}
                         </div>
                     </div>
                     <a href="http://domenart-studio.ru" class="footer__creator" target="_blank">Разработка сайта</a>
