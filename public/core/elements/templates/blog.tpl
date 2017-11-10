@@ -20,13 +20,13 @@
 		'ajaxMode' => 'button',
 		'tplOuter' => '@FILE chunks/filter/outer-blog.tpl',
 		'tpls' => '@FILE chunks/items/article-item.tpl',
-		'filters' => 'publishedon:year,parent:categories',
-		'suggestionsRadio' => 'resource|publishedon,resource|parent',
+		'filters' => 'publishedon:year,tv|category:default',
+		'suggestionsRadio' => 'resource|publishedon,tv|category',
 		'includeTVs' => 'image,chosen',
 		'tplFilter.outer.resource|publishedon' => '@FILE chunks/filter/radio.tpl',
 		'tplFilter.row.resource|publishedon' => '@FILE chunks/filter/input.tpl',
-		'tplFilter.outer.resource|parent' => '@FILE chunks/filter/select.tpl',
-		'tplFilter.row.resource|parent' => '@FILE chunks/filter/option.tpl',
+		'tplFilter.outer.tv|category' => '@FILE chunks/filter/category-select.tpl',
+		'tplFilter.row.tv|category' => '@FILE chunks/filter/category-option.tpl',
 		'where' => ['class_key' => 'Ticket']
 	]}
 </div>
