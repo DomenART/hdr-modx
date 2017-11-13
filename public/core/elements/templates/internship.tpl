@@ -14,40 +14,14 @@
 	</div>
 </header>
 <main class="page-main page-main--internship">
-    <section class="internship-header">
-        <div class="uk-container">
-            <div class="internship-image">
-                <img src="{$_modx->resource['image']}" alt="">
-            </div>
-            <div class="internship-text">
-                {$_modx->resource.content}
-            </div>
+    <div class="uk-container">
+        <div class="internship-image">
+            <img src="{$_modx->resource['image']}" alt="">
         </div>
-    </section>
-    <section class="internship-author">
-        <div class="uk-container">
-            <div class="section-title section-title--dark">
-                <span class="section-title__text">
-                    Об авторе
-                </span>
-            </div>
-            <div class="internship-author__about">
-                {$_modx->resource['internship.author']}
-            </div>
+        <div class="internship-text">
+            {$_modx->resource.content}
         </div>
-    </section>
-    <section class="internship-description">
-        <div class="uk-container">
-            <div class="section-title section-title--dark">
-                <span class="section-title__text">
-                    На стажировке
-                </span>
-            </div>
-            <div class="internship-description__text article-content">
-                {$_modx->resource['internship.description']}
-            </div>
-        </div>
-    </section>
+    </div>
     <section class="internship-comprasion">
         <div class="uk-container">
             <div class="internship-comprasion__title">Работы наших студентов. До и после</div>
