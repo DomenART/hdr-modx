@@ -12,12 +12,12 @@
 						<img src="{$row['image']}" alt="" uk-cover>
 					</div>
 					<div class="slide__inner" uk-slideshow-parallax="scale: 1,1,0.8">
-						<div class="slide__type">{$row['type']}</div>
-						<div class="slide__title">{$row['title']}</div>
-						<div class="slide__desc">{$row['desc']}</div>
-						<div class="slide__more">
+						{if $row['type']}<div class="slide__type">{$row['type']}</div>{/if}
+						{if $row['title']}<div class="slide__title">{$row['title']}</div>{/if}
+						{if $row['desc']}<div class="slide__desc">{$row['desc']}</div>{/if}
+						{if $row['url']}<div class="slide__more">
 							<a href="{$row['url']}" class="uk-button button-intro">Узнать больше<span class="button-arrow"></span></a>
-						</div>
+						</div>{/if}
 					</div>
 				</li>
 			{/foreach}
@@ -28,7 +28,7 @@
 				<span uk-slideshow-item="next"><i uk-icon="icon: chevron-right"></i></span>
 			</div>
 			<div class="slide-bar__count">
-				<b class="js-slideshow-index"></b> из 3
+				<b class="js-slideshow-index"></b> из {count($slideshow)}
 			</div>
 			<div class="slide-bar__social">
 				<div class="social-links">
@@ -224,7 +224,7 @@
 				<div class="receive-list">
 					{foreach $_modx->resource.info_receive | fromJSON as $row}
 					<div class="receive-item uk-flex uk-flex-middle">
-						<div class="receive-item__icon"><img src="{$row['image']}'" width="102" alt=""></div>
+						<div class="receive-item__icon"><img src="{$row['image']}" width="102" alt=""></div>
 						<div class="receive-item__text">{$row['title']}</div>
 					</div>
 					{/foreach}
