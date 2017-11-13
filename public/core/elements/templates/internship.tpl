@@ -18,9 +18,10 @@
         <div class="internship-image">
             <img src="{$_modx->resource['image']}" alt="">
         </div>
-        <div class="internship-text">
+        <div class="internship-text uk-margin-large">
             {$_modx->resource.content}
         </div>
+				<div></div>
     </div>
     <section class="internship-comprasion">
         <div class="uk-container">
