@@ -27,6 +27,25 @@
 	}
 }
 
+.heading-second {
+	text-align: center;
+	margin: 60px 0;
+	color: #000000;
+	font-family: $font-alt;
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 1.125;
+	&::before {
+		content: '';
+		width: 40px;
+		height: 1px;
+		display: inline-block;
+		background-color: #000000;
+		margin-right: 10px;
+		margin-left: -50px;
+	}
+}
+
 ::selection {
 	background: rgba(55, 55, 54, 0.8);
 	color: #fff;

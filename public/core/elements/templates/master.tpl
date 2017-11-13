@@ -28,7 +28,7 @@
 			</header>
 			<main class="page-main">
 				<div class="uk-container">
-					<div class="article-content uk-margin">
+					<div class="article-content uk-margin-large">
 						{$_modx->resource.content}
 					</div>
 					<div></div>			
