@@ -1,7 +1,7 @@
 {extends 'file:templates/master.tpl'}
 
 {block 'content'}
-<header class="prices-header">
+<header class="page-header">
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
 		    {'pdoCrumbs' | snippet : [
@@ -9,13 +9,13 @@
 		        'tplWrapper' => '@INLINE <ul class="uk-breadcrumb">{$output}</ul>'
 		    ]}
 		</div>
-		<h1 class="pagetitle pagetitle--prices">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
+		<h1 class="pagetitle">{$_modx->resource.longtitle ?: $_modx->resource.pagetitle}</h1>
 		<div class="prices__text">
 			{$_modx->resource.content}
 		</div>
 	</div>
 </header>
-<main>
+<main class="page-main page-main--prices">
 	<section class="prices-services">
 		<div class="uk-container">
 			<div class="section-title section-title--dark section-title--prices ">

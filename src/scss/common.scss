@@ -1,3 +1,32 @@
+@mixin substrateGradient($from, $to, $edge) {
+	background-image: -webkit-linear-gradient($from 0%, $from $edge, $to $edge, $to 100%);
+	background-image: -o-linear-gradient($from 0%, $from $edge, $to $edge, $to 100%);
+	background-image: linear-gradient($from 0%, $from $edge, $to $edge, $to 100%);
+}
+
+.page-header {
+	background-color: #f7f7f4;
+}
+
+.page-main {
+	@include substrateGradient(#f7f7f4, #ffffff, 130px);
+	&--blog {
+		@include substrateGradient(#f7f7f4, #ffffff, 220px);
+	}
+	&--contacts {
+		@include substrateGradient(#f7f7f4, #ffffff, 470px);
+	}
+	&--portfolio {
+		@include substrateGradient(#f7f7f4, #4d4d4c, 200px);
+	}
+	&--prices {
+		@include substrateGradient(#f7f7f4, #ffffff, 320px);
+	}
+	&--internship {
+		@include substrateGradient(#f7f7f4, #ffffff, 490px);
+	}
+}
+
 ::selection {
 	background: rgba(55, 55, 54, 0.8);
 	color: #fff;
@@ -37,6 +66,9 @@
 	height: 57px;
 	background: url('../img/header-substrate.jpg') 50% 50% no-repeat;
 	background-size: cover;
+	@media (max-width: $breakpoint-xsmall-max) {
+		height: 50px;
+	}
 }
 
 .header-beige {

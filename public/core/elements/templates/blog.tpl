@@ -1,7 +1,7 @@
 {extends 'file:templates/master.tpl'}
 
 {block 'content'}
-<header class="header-beige">
+<header class="page-header">
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
 		    {'pdoCrumbs' | snippet : [
@@ -13,7 +13,7 @@
 		<div></div>
 	</div>
 </header>
-<div class="blog-pool">
+<main class="page-main page-main--blog">
 	{'!mFilter2' | snippet : [
 		'parents' => $_modx->resource.id,
 		'limit' => 8,
@@ -29,5 +29,5 @@
 		'tplFilter.row.tv|category' => '@FILE chunks/filter/category-option.tpl',
 		'where' => ['class_key' => 'Ticket']
 	]}
-</div>
+</main>
 {/block}

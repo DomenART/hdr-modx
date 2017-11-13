@@ -1,3 +1,7 @@
+.page--prices {
+    @include substrateGradient(#F7F7F4, #ffffff, 17%);
+}
+
 .prices-header {
 	background-color: #f7f7f4;
 }
@@ -6,26 +10,19 @@
 	margin-top: 120px;
 }
 
-.pagetitle--prices {
-	max-width: 600px;
-	margin-bottom: 95px;
+.prices__text {
+	max-width: 795px;
+	margin: 95px auto;
+	text-align: center;
 	@media (max-width: $breakpoint-xsmall-max) {
-		margin-bottom: 50px;
+		margin: 50px auto;
 	}
 }
 
-.prices__text {
-	max-width: 795px;
-	margin: 0 auto 145px;
-	text-align: center;
-}
-
 .prices-services {
-	background: linear-gradient(to bottom, #f7f7f4 52%, #ffffff 52%)
 }
 
 .prices-packages {
-	background: linear-gradient(to bottom, #ffffff 50%, #4d4d4c 50%)
 }
 
 .packages-item {

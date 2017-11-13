@@ -1,7 +1,7 @@
 {extends 'file:templates/master.tpl'}
 
 {block 'content'}
-<header class="header-beige">
+<header class="page-header">
     <div class="uk-container">
     	<div class="breadcrumb uk-flex uk-flex-center">
     	    {'pdoCrumbs' | snippet : [
@@ -13,7 +13,7 @@
         <div></div>
     </div>
 </header>
-<main class="article-main">
+<main class="page-main">
     <div class="uk-container">
         <div class="article-promo">
             <img src="{$_modx->resource['image']}" alt="">

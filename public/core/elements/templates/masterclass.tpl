@@ -1,7 +1,7 @@
 {extends 'file:templates/master.tpl'}
 
 {block 'content'}
-<header class="header-beige">
+<header class="page-header">
 	<div class="uk-container">
 		<div class="breadcrumb uk-flex uk-flex-center">
 			{'pdoCrumbs' | snippet : [
@@ -13,16 +13,16 @@
 		<div></div>
 	</div>
 </header>
-<main class="masterclass-background">
-    <div class="uk-container">
+<main class="page-main">
+	<div class="uk-container">
 		<calendar initial-events='{"eventsArray" | snippet}' initial-date="{$.get['date']}"></calendar>
-        {'msProducts' | snippet : [
-            'tpl' => '@FILE chunks/items/masterclass.tpl',
-            'limit' => 0,
+	    {'msProducts' | snippet : [
+	        'tpl' => '@FILE chunks/items/masterclass.tpl',
+	        'limit' => 0,
 			'sortby' => '{ "date":"DESC" }',
 			'optionFilters' => $.get['date'] ? '{ "date":"' ~ $.get['date'] ~ '" }' : '',
 			'sortbyOptions' => 'date:date'
-        ]}
+	    ]}
     </div>
 </main>
 {/block}

@@ -1,5 +1,8 @@
-.masterclass-background {
-    background: linear-gradient(to bottom, #f7f7f4 200px, #ffffff 200px)
+.page--masterclass {
+    @include substrateGradient(#F7F7F4, #ffffff, 470px);
+}
+
+.masterclass {
 }
 
 .masterclass-item {

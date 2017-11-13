@@ -106,7 +106,7 @@
 			<div class="section-title">
 				<span class="section-title__text">
 					Портфолио
-					<a href="#" class="view-all">смотреть все</a>
+					<a href="{'page.portfolio' | config | url}" class="view-all">смотреть все</a>
 				</span>
 			</div>
 			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@m">
