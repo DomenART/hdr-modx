@@ -205,14 +205,14 @@
 							</a>
 						</div>
 						<div class="uk-width-1-2">
-							<a href="{'page.blog' | config | url}" class="life-item">
+							<div class="life-item">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__blog">
-									<span class="life-item__blog__title">Зачем нужна<br> 3D-визуализация?</span>
-									<span class="life-item__blog__desc">Блог House Room Design</span>
+									<a href="{'page.visualization' | config | url}" class="life-item__blog__title">Зачем нужна<br> 3D-визуализация?</a>
+									<a href="{'page.blog' | config | url}" class="life-item__blog__desc">Блог House Room Design</a>
 								</span>
-							</a>
+							</div>
 						</div>
 					</div>
 				</div>
