@@ -89,3 +89,9 @@
         </div>
     </section>
 </footer>
+
+{'!AjaxForm@Form' | snippet : [
+    'emailSubject'  => 'Заказ консультации',
+    'validate'      => 'nomail:blank,email:email:required,conditions:required',
+    'form'          => '@FILE chunks/forms/consultation.tpl'
+]}

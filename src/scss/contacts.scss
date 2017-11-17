@@ -101,9 +101,12 @@
 
 .contacts-input {
 	padding-left: 0;
-	background-color: #f7f7f4;
+	background-color: transparent;
 	border-bottom: 1px solid #cccccc;
 	height: 32px;
+	&:focus {
+		background-color: transparent;
+	}
 }
 
 .contacts-textarea {
@@ -111,7 +114,11 @@
 	box-sizing: border-box;
 	padding: 0;
 	background: url('../img/bg-textarea.png') 0 0 repeat;
-	line-height: 32px;
+	background-color: transparent;
+	line-height: 40px;
+	&:focus {
+		background-color: transparent;
+	}
 }
 
 .contacts-input, .contacts-textarea {

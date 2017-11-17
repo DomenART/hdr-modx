@@ -56,20 +56,20 @@
 	</section>
 	<section class="section-directions">
 		<div class="uk-container">
-			<div class="uk-grid uk-grid-collapse">
-				<div class="uk-width-1-2@m">
+			<div class="uk-grid uk-grid-collapse" uk-scrollspy="target: .js-scrollspy; cls: uk-animation-slide-bottom-medium; delay: 300">
+				<div class="uk-width-1-2@m js-scrollspy">
 					<a href="" class="direction-styles uk-flex uk-flex-middle">
 						<span class="direction-styles__title">
 							<span>Исторические стили интерьера</span>
 						</span>
 					</a>
 				</div>
-				<div class="uk-width-1-2@m direction-consult uk-flex">
+				<div class="uk-width-1-2@m direction-consult uk-flex js-scrollspy">
 					{include 'file:partials/consult.tpl'}
 				</div>
-				<div class="uk-width-1-2@m">
+				<div class="uk-width-1-2@m js-scrollspy">
 					<div class="direction-design uk-flex uk-flex-middle">
-						<div class="direction-design__image"></div>
+						<div class="direction-design__image" uk-parallax="bgy: -200"></div>
 						<div class="direction-design__container">
 							<div class="direction-design__title">Дизайн-проекты</div>
 							<ul class="direction-design__list">
@@ -83,7 +83,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="uk-width-1-2@m">
+				<div class="uk-width-1-2@m js-scrollspy">
 					<a href="" class="direction-planning uk-flex uk-flex-middle">
 						<div class="direction-planning__image"></div>
 						<span class="direction-planning__title">
@@ -92,7 +92,7 @@
 					</a>
 				</div>
 				<div class="uk-width-1-2@m"></div>
-				<div class="uk-width-1-2@m">
+				<div class="uk-width-1-2@m js-scrollspy">
 					<a href="" class="direction-interior">
 						<span>Качественный<br>и функциональный интерьер</span>
 					</a>
@@ -130,7 +130,7 @@
 				</span>
 			</div>
 
-			<div class="working-list uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m">
+			<div class="working-list uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-scrollspy="target: > div; cls: uk-animation-slide-bottom-medium; delay: 300">
 				{foreach $_modx->resource.working | fromJSON as $row}
 				<div class="working-item uk-cover-container">
 					<img src="{$row['image']}" alt="" class="working-item__image" uk-cover>
@@ -154,27 +154,27 @@
 				</span>
 			</div>
 
-			<div class="uk-grid uk-grid-collapse">
+			<div class="uk-grid uk-grid-collapse" uk-scrollspy="target: .js-scrollspy; cls: uk-animation-slide-bottom-medium; delay: 300">
 				<div class="uk-width-1-2@m">
 					<div class="uk-grid uk-grid-collapse">
 						<div class="uk-width-1-2">
-							<a href="{'page.reviews' | config | url}" class="life-item">
+							<a href="{'page.reviews' | config | url}" class="life-item js-scrollspy">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title">Отзывы</span>
 							</a>
-							<a href="{'page.jobs' | config | url}" class="life-item uk-cover-container">
+							<a href="{'page.jobs' | config | url}" class="life-item uk-cover-container js-scrollspy">
 								<img src="assets/template/img/life-3.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title">Вакансии</span>
 							</a>
 						</div>
 						<div class="uk-width-1-2">
-							<a href="{'page.paintings' | config | url}" class="life-item uk-cover-container">
+							<a href="{'page.paintings' | config | url}" class="life-item uk-cover-container js-scrollspy">
 								<img src="assets/template/img/life-1.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__title life-item__title--wide">Картины&nbsp;в<br> интерьер</span>
 							</a>
-							<a href="{'page.about' | config | url}" class="life-item uk-cover-container">
+							<a href="{'page.about' | config | url}" class="life-item uk-cover-container js-scrollspy">
 								<img src="assets/template/img/life-4.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__square uk-flex uk-flex-middle uk-flex-center">
@@ -187,12 +187,12 @@
 				<div class="uk-width-1-2@m">
 					<div class="uk-grid uk-grid-collapse">
 						<div class="uk-width-1-2">
-							<a href="{'page.ddchina' | config | url}" class="life-item uk-cover-container">
+							<a href="{'page.ddchina' | config | url}" class="life-item uk-cover-container js-scrollspy">
 								<img src="assets/template/img/life-2.jpg" alt="" class="life-item__image" uk-cover>
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__desc">Дни дизайна в Китае</span>
 							</a>
-							<a href="{'page.internship' | config | url}" class="life-item life-item--light">
+							<a href="{'page.internship' | config | url}" class="life-item life-item--light js-scrollspy">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__mc uk-flex uk-flex-column uk-flex-middle uk-flex-center">
 									<span class="life-item__mc__abbr">МК</span>
@@ -205,7 +205,7 @@
 							</a>
 						</div>
 						<div class="uk-width-1-2">
-							<div class="life-item">
+							<div class="life-item js-scrollspy">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<img src="assets/template/img/spacer.gif" alt="" class="life-item__spacer">
 								<span class="life-item__blog">

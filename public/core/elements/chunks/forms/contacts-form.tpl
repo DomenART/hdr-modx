@@ -16,9 +16,11 @@
             <textarea name="message" class="contacts-textarea uk-textarea" rows="5" placeholder="Сообщение"></textarea>
         </div>
         <div class="contacts-input-row uk-flex uk-flex-top">
-            <input type="checkbox" id="contacts-conditions" name="conditions" class="contacts-checkbox">
+            <input type="checkbox" id="contacts-conditions" name="conditions" class="contacts-checkbox" required>
             <label for="contacts-conditions" class="contacts__conditions">
-                Нажимая “Отправить”, подтверждаю, что прочитал(-а) <a href="#">Конфиденциальное соглашение</a> и соглашаюсь с <a href="#">Политикой обработки персональных данных</a>
+                 Нажимая “Отправить”, подтверждаю, что прочитал(-а)
+                <a href="{'page.agreement' | config | url}">Конфиденциальное соглашение</a> и соглашаюсь с
+                <a href="{'page.policy' | config | url}">Политикой обработки персональных данных</a>
             </label>
         </div>
         <button class="uk-button button-intro button-intro--contacts">Отправить<span class="button-arrow"></span></button>

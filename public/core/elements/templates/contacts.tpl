@@ -43,7 +43,7 @@
 			</div>
 			{'!AjaxForm@Form' | snippet : [
 	            'emailSubject'  => 'Сообщение',
-	            'validate'      => 'nomail:blank,email:email:required',
+	            'validate'      => 'nomail:blank,email:email:required,conditions:required',
 	            'form'          => '@FILE chunks/forms/contacts-form.tpl'
 	        ]}
 		</div>

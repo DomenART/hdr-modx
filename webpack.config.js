@@ -12,7 +12,8 @@ const PATHS = {
 // Main Settings config
 module.exports = {
 	entry: {
-		main: PATHS.source + 'js/main.js'
+		main: PATHS.source + 'js/main.js',
+		ajaxform: PATHS.source + 'js/ajaxform.js'
 	},
 	output: {
 		path: PATHS.build,
@@ -21,7 +22,7 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.js$/,
-			exclude: /(node_modules|bower_components)/,
+			// exclude: /(node_modules|bower_components)/,
 			use: {
 				loader: 'babel-loader',
 				options: {
@@ -98,9 +99,9 @@ module.exports = {
 
 	plugins: [
 		new ExtractTextPlugin('[name].css'),
-		new webpack.optimize.UglifyJsPlugin({
-			minimize: env === 'production' ? true : false
-		}),
+		// new webpack.optimize.UglifyJsPlugin({
+		// 	minimize: env === 'production' ? true : false
+		// }),
 		new webpack.DefinePlugin({
 			BUNDLED: true,
 			VERSION: `'${version}'`,

@@ -764,3 +764,54 @@
 		position: absolute;
 	}
 }
+
+.modal-form {
+	width: 380px;
+}
+
+.modal-form__title {
+	margin-bottom: 20px;
+	font-size: 26px;
+	line-height: 1.2;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+label.uk-form-danger {
+    font-size: 14px;
+    color: rgb(254, 70, 67) !important;
+    font-style: italic;
+    line-height: 1.2;
+    padding: 18px;
+    background: rgba(255, 228, 230, 0.85) !important;
+    border: 1px solid #ca1e22;
+    position: absolute;
+    box-shadow: 0 2px 6px rgba(0,0,0,.6);
+    z-index: 999;
+    margin-left: 15px;
+    margin-top: 4px;
+    margin-right: 20px;
+    display: block;
+}
+
+label.uk-form-danger:before {
+    content: '';
+    display: block;
+    border-width: 0 9px 9px;
+    border-style: solid;
+    border-color: transparent transparent #ca1e22;
+    position: absolute;
+    left: 45px;
+    top: -9px;
+}
+
+label.uk-form-danger:after {
+    content: '';
+    display: block;
+    border-width: 0 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 228, 230, 0.85);
+    position: absolute;
+    left: 46px;
+    top: -8px;
+}

@@ -86,10 +86,12 @@
     <div class="calculation__submit">
         <div class="uk-grid uk-grid-large uk-flex-middle">
             <div class="uk-width-2-3@s">
-                <input id="calculation-check" type="checkbox" name="calculation-check" checked>
+                <input id="calculation-check" type="checkbox" name="calculation-check" checked required>
                 <div class="calculation__conditions">
                     <label for="calculation-check">
-                        Нажимая кнопку “Отправить”, подтверждаю, что прочитал(-а) <a href="#">Конфиденциальное соглашение</a> и соглашаюсь с <a href="#">Политикой обработки персональных данных</a>
+                         Нажимая “Отправить”, подтверждаю, что прочитал(-а)
+                        <a href="{'page.agreement' | config | url}">Конфиденциальное соглашение</a> и соглашаюсь с
+                        <a href="{'page.policy' | config | url}">Политикой обработки персональных данных</a>
                     </label>
                 </div>
             </div>

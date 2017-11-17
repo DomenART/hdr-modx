@@ -39,6 +39,21 @@ import Icons from 'uikit/dist/js/uikit-icons'
 UIkit.use(Icons)
 
 /**
+ * validate
+ */
+require('jquery-validation')
+require('jquery-validation/dist/localization/messages_ru.js')
+$('.ajax_form').each(function () {
+	$(this).validate({
+		errorClass: 'uk-form-danger',
+		validClass: 'uk-form-success'
+	});
+});
+$(document).on('af_complete', function (event, response) {
+	response.form.addClass('af_completed');
+});
+
+/**
  * toolbar
  */
 var toolbar = document.querySelector('.toolbar')
@@ -112,29 +127,29 @@ if (projectItems.length) {
 	}
 }
 
-/* height-match для пакетов страницы "Цены" */
-
-var packagesText = document.querySelectorAll(".packages-item__text");
-var packagesTitle = document.querySelectorAll(".packages-item__title");
-var packagesDesc = document.querySelectorAll(".packages-item__desc");
-
-function heightMatch(packagesItem) {
-	if (packagesItem) {
-		var packagesItemMax = 0;
-		for (var i = 0; i < packagesItem.length; i++) {
-			if (packagesItemMax < packagesItem[i].offsetHeight) {
-				packagesItemMax = packagesItem[i].offsetHeight
-			}
+/**
+ * height-match для пакетов страницы "Цены"
+ */
+function dependentMatch(wrapper, targets) {
+	let cur = 0
+	let process = false
+	let heightMatch = {}
+	let step = function (target) {
+		if (heightMatch._isReady && process) {
+			cur++
+			process = false
+			heightMatch.$destroy()
+		} else if (!process) {
+			process = true
+			heightMatch = UIkit.heightMatch(wrapper, {
+				target: targets[cur]
+			})
 		}
-		for (var i = 0; i < packagesItem.length; i++) {
-			packagesItem[i].style.height = packagesItemMax + "px";
-		}
+		if (cur <= targets.length) requestAnimationFrame(step)
 	}
+	requestAnimationFrame(step)
 }
-
-heightMatch(packagesText);
-heightMatch(packagesTitle);
-heightMatch(packagesDesc);
+dependentMatch('.js-packages-wrapper', ['.packages-item__title', '.packages-item__desc', '.packages-item__text'])
 
 /**
  * update the index of the active slide

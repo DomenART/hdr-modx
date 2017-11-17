@@ -23,7 +23,7 @@
 					Цены на услуги House Design Room
 				</span>
 			</div>
-			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@l" uk-height-match="target: .services-item__text">
+			<div class="uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@l" uk-height-match="target: .services-item__text"  uk-scrollspy="target: > div; cls: uk-animation-slide-bottom-medium; delay: 300">
 				{foreach $_modx->resource['prices.pricelist'] | json_decode as $row}
 					<div class="services-item" style="background-image: url('{$row.image}')">
 						<div class="services-item__title">{$row.title | nl2br}</div>
@@ -44,10 +44,10 @@
 					Пакеты
 				</span>
 			</div>
-			<div class="js-packages-wrapper uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m">
+			<div class="js-packages-wrapper uk-grid uk-grid-collapse uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
 				{foreach $_modx->resource['prices.packages'] | json_decode as $row}
 					<div class="packages-item">
-						<div class="packages-item__title uk-flex uk-flex-middle uk-flex-center">«{$row.title}» </div>
+						<div class="packages-item__title uk-flex uk-flex-middle uk-flex-center">«{$row.title}»</div>
 						<div class="packages-item__desc uk-flex uk-flex-middle uk-flex-center">{$row.subtitle}</div>
 						<div class="packages-item__actual-price">
 							<span>{$row.price}</span>
@@ -78,13 +78,13 @@
 			</div>
 			<div class="uk-grid uk-child-width-1-2@m">
 				<div>
-					<div class="consult consult--prices">
+					<div class="consult consult--prices" uk-parallax="y: 300">
 						<div class="consult__title">С ЧЕГО НАЧАТЬ?</div>
 						<div class="consult__text">
 							Запишитесь на консультацию<br>
 							с возможностью выезда на ваш объект
 						</div>
-						<button class="uk-button button-framed button-intro--consult">Записаться<span class="button-arrow"></span></button>
+						<button class="uk-button button-framed button-intro--consult" uk-toggle="target: #consultation">Записаться<span class="button-arrow"></span></button>
 					</div>
 				</div>
 				<div class="uk-flex-first uk-flex-last@m">
@@ -156,7 +156,7 @@
 				</div>
 				{'!AjaxForm@Form' | snippet : [
 					'emailSubject'  => 'Расчёт стоимости',
-					'validate'      => 'nomail:blank,phone:tel:required',
+					'validate'      => 'nomail:blank,phone:tel:required,conditions:required',
 					'form'          => '@FILE chunks/forms/calculation-form.tpl'
 				]}
 			</div>
