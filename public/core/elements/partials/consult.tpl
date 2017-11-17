@@ -5,6 +5,6 @@
 			<br>
 			Позвоните нам. 
 		</div>
-		<button class="uk-button button-framed">Заказать<span class="button-arrow"></span></button>
+		<button class="uk-button button-framed" uk-toggle="target: #consultation">Заказать<span class="button-arrow"></span></button>
 	</div>
 </div>
