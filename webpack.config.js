@@ -13,7 +13,8 @@ const PATHS = {
 module.exports = {
 	entry: {
 		main: PATHS.source + 'js/main.js',
-		ajaxform: PATHS.source + 'js/ajaxform.js'
+		ajaxform: PATHS.source + 'js/ajaxform.js',
+		tickets: PATHS.source + 'js/tickets.js'
 	},
 	output: {
 		path: PATHS.build,
@@ -23,12 +24,7 @@ module.exports = {
 		rules: [{
 			test: /\.js$/,
 			// exclude: /(node_modules|bower_components)/,
-			use: {
-				loader: 'babel-loader',
-				options: {
-					presets: ['es2015']
-				}
-			}
+			loader: 'babel-loader'
 		}, {
 			test: /\.vue$/,
 			loader: 'vue-loader',

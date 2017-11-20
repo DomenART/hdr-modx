@@ -60,20 +60,17 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 337);
+/******/ 	return __webpack_require__(__webpack_require__.s = 219);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 337:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ 219:
+/***/ (function(module, exports) {
 
 var AjaxForm = {
 
-    initialize: function initialize(afConfig) {
+    initialize: function (afConfig) {
         if (!jQuery().ajaxForm) {
             document.write('<script src="' + afConfig.assetsUrl + 'js/lib/jquery.form.min.js"><\/script>');
         }
@@ -87,7 +84,7 @@ var AjaxForm = {
                 dataType: 'json',
                 data: { pageId: afConfig.pageId },
                 url: afConfig.actionUrl,
-                beforeSerialize: function beforeSerialize(form, options) {
+                beforeSerialize: function (form, options) {
                     form.find(':submit').each(function () {
                         if (!form.find('input[type="hidden"][name="' + $(this).attr('name') + '"]').length) {
                             $(form).append($('<input type="hidden">').attr({
@@ -99,7 +96,7 @@ var AjaxForm = {
 
                     form.find('[name="nomail"]').val('');
                 },
-                beforeSubmit: function beforeSubmit(fields, form) {
+                beforeSubmit: function (fields, form) {
                     if (typeof afValidated != 'undefined' && afValidated == false) {
                         return false;
                     }
@@ -108,7 +105,7 @@ var AjaxForm = {
                     form.find('input,textarea,select,button').attr('disabled', true);
                     return true;
                 },
-                success: function success(response, status, xhr, form) {
+                success: function (response, status, xhr, form) {
                     form.find('input,textarea,select,button').attr('disabled', false);
                     response.form = form;
                     $(document).trigger('af_complete', response);
@@ -144,7 +141,7 @@ var AjaxForm = {
 };
 
 AjaxForm.Message = {
-    success: function success(message, sticky) {
+    success: function (message, sticky) {
         if (message) {
             timeout = sticky ? 0 : 5000;
             UIkit.notification({
@@ -154,7 +151,7 @@ AjaxForm.Message = {
             });
         }
     },
-    error: function error(message, sticky) {
+    error: function (message, sticky) {
         if (message) {
             timeout = sticky ? 0 : 5000;
             UIkit.notification({
@@ -164,7 +161,7 @@ AjaxForm.Message = {
             });
         }
     },
-    info: function info(message, sticky) {
+    info: function (message, sticky) {
         if (message) {
             timeout = sticky ? 0 : 5000;
             UIkit.notification({

@@ -64,7 +64,7 @@
             <section class="article-comments">
                 {'!TicketComments' | snippet : [
                     'allowGuest' => '1',
-                    'tplCommentFormGuest' => '@FILE chunks/forms/comment-form.tpl'
+                    'tplCommentFormGuest' => '@FILE chunks/forms/comment.tpl'
                 ]}
             </section>
         </div>

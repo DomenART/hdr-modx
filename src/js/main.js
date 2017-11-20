@@ -10,21 +10,27 @@ import '../scss/main.scss'
 /**
  * Include Vue
  */
-import Vue from 'vue'
-import comprasion from './components/comprasion.vue'
-import comprasionHome from './components/comprasion-home.vue'
-import calendar from './components/calendar.vue'
+// import Vue from 'vue'
+// import comprasion from './components/comprasion.vue'
+// import comprasionHome from './components/comprasion-home.vue'
+// import calendar from './components/calendar.vue'
 
-Vue.component('comprasion', comprasion)
-Vue.component('comprasion-home', comprasionHome)
-Vue.component('calendar', calendar)
+// Vue.component('comprasion', comprasion)
+// Vue.component('comprasion-home', comprasionHome)
+// Vue.component('calendar', calendar)
 
-var app = new Vue({
-	el: '#app',
-	moment () {
-		return moment()
-	}
-})
+// var app = new Vue({
+// 	el: '#app'
+// })
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Comprasion from './components/comprasion'
+ReactDOM.render(
+	<Comprasion/>,
+	document.getElementById('app')
+)
+
 
 /**
  * Include jQuery
@@ -131,23 +137,26 @@ if (projectItems.length) {
  * height-match для пакетов страницы "Цены"
  */
 function dependentMatch(wrapper, targets) {
-	let cur = 0
-	let process = false
-	let heightMatch = {}
-	let step = function (target) {
-		if (heightMatch._isReady && process) {
-			cur++
-			process = false
-			heightMatch.$destroy()
-		} else if (!process) {
-			process = true
-			heightMatch = UIkit.heightMatch(wrapper, {
-				target: targets[cur]
-			})
+	let wrap = document.querySelector(wrapper)
+	if (wrap) {
+		let cur = 0
+		let process = false
+		let heightMatch = {}
+		let step = function (target) {
+			if (heightMatch._isReady && process) {
+				cur++
+				process = false
+				heightMatch.$destroy()
+			} else if (!process) {
+				process = true
+				heightMatch = UIkit.heightMatch(wrap, {
+					target: targets[cur]
+				})
+			}
+			if (cur <= targets.length) requestAnimationFrame(step)
 		}
-		if (cur <= targets.length) requestAnimationFrame(step)
+		requestAnimationFrame(step)
 	}
-	requestAnimationFrame(step)
 }
 dependentMatch('.js-packages-wrapper', ['.packages-item__title', '.packages-item__desc', '.packages-item__text'])
 
@@ -180,14 +189,40 @@ if (pagingMore && pagingAll) {
 	})
 
 	// hide the pagination section
+	$(document).on('pdopage_load', (e, response) => {
+		let section = document.querySelector('#pdoPage .paging')
+		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
+	})
+}
+
+/**
+ * ms2 pagination on page
+ */
+var ms2PagingMore = document.querySelector('.js-ms2-paging-more')
+var ms2PagingAll = document.querySelector('.js-ms2-paging-all')
+
+if (ms2PagingMore && ms2PagingAll) {
+	ms2PagingMore.addEventListener('click', () => {
+		mSearch2.addPage()
+	})
+
+	ms2PagingAll.addEventListener('click', () => {
+		mSearch2.load({
+			page: 1,
+			limit: 9999 // bad
+		})
+	})
+
+	// hide the pagination section
 	$(document).on('mse2_load', (e, response) => {
 		let section = document.querySelector('#mse2_mfilter .paging')
 		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
 	})
 }
 
-/* Responsive tables in article */
-
+/**
+ * Responsive tables in article
+ */
 var article = document.querySelector('.article-content')
 
 if (article) {
@@ -200,3 +235,37 @@ if (article) {
 		div.classList.add("article-table-wrapper","uk-overflow-auto")
 	});
 }
+
+/**
+ * Likes in article
+ */
+$('.js-like').click(function () {
+	var $el = $(this),
+		id = $(this).data('id'),
+		value = $(this).data('value');
+
+	$.post('assets/template/action.php', {
+		action: "ticket/like",
+		id: id,
+		value: value
+	}, function (response) {
+		console.log(1);
+		response = JSON.parse(response);
+
+		if (response.success) {
+			if (value > 0) {
+				$el.text(response.rating.rating_plus);
+			}
+			else {
+				$el.text(response.rating.rating_minus);
+			}
+		}
+		else {
+			UIkit.notification({
+				message: response.message,
+				status: 'danger',
+				timeout: 5000
+			});
+		}
+	});
+});

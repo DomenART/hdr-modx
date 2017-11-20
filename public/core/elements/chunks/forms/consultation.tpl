@@ -5,21 +5,21 @@
              Есть вопросы?
             <br>Пишите нам
         </div>
-        <form>
+        <form action="{$_modx->resource.uri}" method="post" class="ajax_form">
             <div class="uk-margin">
-                <input type="text" name="name" class="contacts-input uk-input" placeholder="Представьтесь">
+                <input type="text" name="name" class="uk-input input-notebook" placeholder="Представьтесь">
             </div>
             <div class="uk-margin">
-                <input type="email" name="email" class="contacts-input uk-input" placeholder="Электронная почта*" required>
+                <input type="email" name="email" class="uk-input input-notebook" placeholder="Электронная почта*" required>
             </div>
             <div class="uk-margin">
-                <input type="tel" name="phone" class="contacts-input uk-input" placeholder="Укажите телефон">
+                <input type="tel" name="phone" class="uk-input input-notebook" placeholder="Укажите телефон">
             </div>
             <div class="uk-margin">
-                <textarea name="message" class="contacts-textarea uk-textarea" rows="3" placeholder="Сообщение"></textarea>
+                <textarea name="message" class="uk-textarea textarea-notebook" rows="3" placeholder="Сообщение"></textarea>
             </div>
             <div class="uk-margin uk-flex uk-flex-top">
-                <input type="checkbox" id="contacts-conditions" name="conditions" class="contacts-checkbox" required>
+                <input type="checkbox" id="contacts-conditions" name="conditions" class="uk-checkbox uk-margin-small-right" checked required>
                 <label for="contacts-conditions" class="contacts__conditions">
                      Нажимая “Отправить”, подтверждаю, что прочитал(-а)
                     <a href="{'page.agreement' | config | url}">Конфиденциальное соглашение</a> и соглашаюсь с

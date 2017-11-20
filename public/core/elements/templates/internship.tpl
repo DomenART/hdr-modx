@@ -21,7 +21,7 @@
         <div class="internship-text uk-margin-large">
             {$_modx->resource.content}
         </div>
-				<div></div>
+        <div></div>
     </div>
     <section class="internship-comprasion">
         <div class="uk-container">
@@ -81,21 +81,11 @@
                 <div class="internship-enroll__title">
                     Стажировка
                 </div>
-                <form class="internship-form">
-                    <div class="internship-form__row">
-                        <label for="intern-name">Имя</label>
-                        <input type="text" id="intern-name" class="uk-input" placeholder="Имя">
-                    </div>
-                    <div class="internship-form__row">
-                        <label for="intern-tel">Телефон</label>
-                        <input type="tel" id="intern-tel" class="uk-input" placeholder="+7 123 000 00 00">
-                    </div>
-                    <div class="internship-form__row">
-                        <label for="intern-email">E-mail</label>
-                        <input type="text" id="intern-email" class="uk-input" placeholder="mail@mail.com">
-                    </div>
-                    <button type="submit" class="btn btn-primary submit comment-send">Отправить<span uk-icon="icon: arrow-right"></span></button>
-                </form>
+                {'!AjaxForm@Form' | snippet : [
+                    'emailSubject'  => 'Стажировка',
+                    'validate'      => 'nomail:blank,phone:tel:required',
+                    'form'          => '@FILE chunks/forms/internship.tpl'
+                ]}
             </div>
         </div>
     </section>
@@ -109,7 +99,7 @@
             <div class="feedback-item-wrapper">
                 {'pdoResources' | snippet : [
                     'limit' => '2',
-                    'tpl' => '@FILE chunks/items/feedback-item.tpl',
+                    'tpl' => '@FILE chunks/items/feedback.tpl',
                     'includeContent' => '1'
                 ]}
             </div>
@@ -119,9 +109,9 @@
         <div class="internship-comments-wrapper">
             {'!TicketComments' | snippet : [
                 'allowGuest' => '1',
-                'tplCommentFormGuest' => '@FILE chunks/forms/comment-form.tpl'
+                'tplCommentFormGuest' => '@FILE chunks/forms/comment.tpl'
             ]}
-            </div>
+        </div>
     </section>
 </main>
 {/block}

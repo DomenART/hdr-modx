@@ -17,8 +17,28 @@ $base-em-color: #000000;
 $base-link-color: #000;
 $base-link-hover-color: #cc0000;
 
-@import '../../node_modules/uikit/src/scss/variables.scss';
-@import '../../node_modules/uikit/src/scss/mixins.scss';
+$form-padding-horizontal: 15px;
+$form-background: #fff;
+$form-color: #666;
+$form-border-width: 1px;
+$form-border: #e0e0e0;
+$form-placeholder-color: #ccc;
+$global-danger-background: #cc0000;
+$button-text-transform: none;
+$form-radio-size: 18px;
+$form-radio-background: #ffffff;
+$form-radio-checked-background: #ffffff;
+$form-radio-checked-focus-background: #ffffff;
+$form-radio-margin-top: 0;
+$form-radio-border-width: 1px;
+$form-radio-border: #cbcbcb;
+$form-radio-focus-border: #cbcbcb;
+$form-radio-checked-border: #cbcbcb;
+$form-radio-disabled-border: #cccccc;
+$form-radio-checked-icon-color: #000000;
+
+@import '../../node_modules/uikit/src/scss/variables-theme.scss';
+@import '../../node_modules/uikit/src/scss/mixins-theme.scss';
 
 @mixin hook-base-h2() {
 	margin-top: 72px;
@@ -86,4 +106,14 @@ $base-link-hover-color: #cc0000;
 	}
 }
 
-@import '../../node_modules/uikit/src/scss/uikit.scss';
+@mixin hook-form() {
+	border: $form-border-width solid $form-border;
+	border-radius: 3px;
+}
+
+@mixin hook-form-radio() {
+	border: $form-radio-border-width solid $form-radio-border;
+	border-radius: 3px;
+}
+
+@import '../../node_modules/uikit/src/scss/uikit-theme.scss';

@@ -25,6 +25,7 @@ node_modules/
 *.sublime-workspace
 package-lock.json
 .vscode/
+.idea/
 .directory
 composer-lock.json
 .DS_Store

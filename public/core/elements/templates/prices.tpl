@@ -62,7 +62,7 @@
 							{$row.desc | nl2br}
 						</div>
 						<div class="packages-item__button">
-							<a href="{$row.link}" class="uk-button button-intro button-intro--packages">Заказать<span class="button-arrow"></span></a>
+							<a href="{$row.link}" class="uk-button button-gray">Заказать<span class="button-arrow"></span></a>
 						</div>
 					</div>
 				{/foreach}
@@ -150,14 +150,10 @@
 				Узнайте сколько вам нужно будет потратить на: дизайнера, мебель, технику, материалы и отделочные работы. Мы бесплатно проконсультируем, о том где можно купить как дорогие, качественные материалы, так и недорогие с хорошим соотношением цена/качества.
 			</div>
 			<div class="calculation__container">
-				<div class="calculation__tip">
-					Введите ваши данные и мы рассчитаем стоимость дизайн проекта в 3-х категориях<br>
-						<span class="form-required">*</span>Поле “Телефон” обязательно для заполнения
-				</div>
 				{'!AjaxForm@Form' | snippet : [
 					'emailSubject'  => 'Расчёт стоимости',
 					'validate'      => 'nomail:blank,phone:tel:required,conditions:required',
-					'form'          => '@FILE chunks/forms/calculation-form.tpl'
+					'form'          => '@FILE chunks/forms/calculation.tpl'
 				]}
 			</div>
 		</div>

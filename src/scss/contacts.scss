@@ -85,72 +85,18 @@
 }
 
 .contacts-form__title {
-	margin-bottom: 46px;
+	margin-bottom: 40px;
 	font-size: 30px;
 	line-height: 1.2;
 	text-transform: uppercase;
 }
 
-.contacts-placeholder {
-	font-family: Rubik;
-	color: #999999;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 36px;
-}
-
-.contacts-input {
-	padding-left: 0;
-	background-color: transparent;
-	border-bottom: 1px solid #cccccc;
-	height: 32px;
-	&:focus {
-		background-color: transparent;
-	}
-}
-
-.contacts-textarea {
-	width: 100%;
-	box-sizing: border-box;
-	padding: 0;
-	background: url('../img/bg-textarea.png') 0 0 repeat;
-	background-color: transparent;
-	line-height: 40px;
-	&:focus {
-		background-color: transparent;
-	}
-}
-
-.contacts-input, .contacts-textarea {
-	&::-webkit-input-placeholder {
-        color: #999999;
-        font-size: 16px;
-	}
-	&::-moz-placeholder {
-        color: #999999;
-        font-size: 16px;
-	}
-	&:-moz-placeholder {
-        color: #999999;
-        font-size: 16px;
-	}
-	&:-ms-input-placeholder {
-        color: #999999;
-        font-size: 16px;
-	}
-}
-
 .contacts-input-row {
-	margin-bottom: 15px;
+	margin-bottom: 7px;
 }
 
 .contacts-textarea-row {
-	margin: 50px 0 18px;
-}
-
-.contacts-checkbox {
-	margin-top: 2px;
-	margin-right: 20px;
+	margin: 37px 0 17px;
 }
 
 .contacts__conditions {
@@ -164,10 +110,7 @@
 	}
 }
 
-.button-intro--contacts {
-	margin-top: 22px;
-	padding: 24px 53px 20px 63px;
-	.button-intro__arrow {
-		margin-left: 34px;
-	}
+.contacts-form__submit {
+	margin-top: 30px;
+	padding: 21px 55px;
 }

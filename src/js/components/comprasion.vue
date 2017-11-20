@@ -34,16 +34,16 @@
 				baseHeight: 460,
 				width: 1200,
 				height: 460,
-        switcher: null
+        		switcher: null
 			}
 		},
 
 		mounted () {
-      if(this.switcher = this.getParentSwitcher(this.$el)) {
-      	this.switcher.addEventListener('shown', () => {
-          this.resize()
-      	})
-      }
+			if(this.switcher = this.getParentSwitcher(this.$el)) {
+				this.switcher.addEventListener('shown', () => {
+					this.resize()
+				})
+			}
 
 			this.resize()
 			window.addEventListener('resize', this.resize)
@@ -52,16 +52,16 @@
 		computed: {
 			before () {
 				return {
-          image: this.initialBeforeImage,
-          label: this.initialBeforeLabel || 'было'
-        }
+					image: this.initialBeforeImage,
+					label: this.initialBeforeLabel || 'было'
+				}
 			},
 
 			after () {
 				return {
-          image: this.initialAfterImage,
-          label: this.initialAfterLabel || 'стало'
-        }
+					image: this.initialAfterImage,
+					label: this.initialAfterLabel || 'стало'
+				}
 			},
 
 			container () {
@@ -157,12 +157,12 @@
 				this.reset()
 			},
 
-      getParentSwitcher (el) {
-        el = el || this.$el
-        if (el.className === undefined) return false
-        if (el.className.indexOf('uk-switcher') > -1) return el
-        return this.getParentSwitcher(el.parentNode)
-      }
+			getParentSwitcher (el) {
+				el = el || this.$el
+				if (el.className === undefined) return false
+				if (el.className.indexOf('uk-switcher') > -1) return el
+				return this.getParentSwitcher(el.parentNode)
+			}
 		}
 	}
 </script>

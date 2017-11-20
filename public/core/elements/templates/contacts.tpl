@@ -44,7 +44,7 @@
 			{'!AjaxForm@Form' | snippet : [
 	            'emailSubject'  => 'Сообщение',
 	            'validate'      => 'nomail:blank,email:email:required,conditions:required',
-	            'form'          => '@FILE chunks/forms/contacts-form.tpl'
+	            'form'          => '@FILE chunks/forms/contacts.tpl'
 	        ]}
 		</div>
 	</div>

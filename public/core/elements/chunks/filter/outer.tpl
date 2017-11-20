@@ -11,8 +11,8 @@
 
 	<div class="paging">
 		<span class="paging__inner">
-			<button type="button" class="uk-button button-framed js-paging-more">Показать ещё<span class="button-arrow"></span></button>
-			<button type="button" class="view-all js-paging-all">показать все</button>
+			<button type="button" class="uk-button button-framed js-ms2-paging-more">Показать ещё<span class="button-arrow"></span></button>
+			<button type="button" class="view-all js-ms2-paging-all">показать все</button>
 		</span>
 	</div>
 
