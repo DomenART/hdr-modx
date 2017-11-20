@@ -8,28 +8,58 @@ import '../scss/main.scss'
 /*--------------------------------------------------*/
 
 /**
- * Include Vue
+ * Include React
  */
-// import Vue from 'vue'
-// import comprasion from './components/comprasion.vue'
-// import comprasionHome from './components/comprasion-home.vue'
-// import calendar from './components/calendar.vue'
-
-// Vue.component('comprasion', comprasion)
-// Vue.component('comprasion-home', comprasionHome)
-// Vue.component('calendar', calendar)
-
-// var app = new Vue({
-// 	el: '#app'
-// })
 
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Comprasion from './components/comprasion'
-ReactDOM.render(
-	<Comprasion/>,
-	document.getElementById('app')
-)
+import ComprasionHome from './components/comprasion-home'
+import Calendar from './components/calendar'
+
+document.querySelectorAll('.js-comprasion').forEach((el, i) => {
+	let data = el.dataset
+	let before = {
+		image: data.beforeimage,
+		label: data.beforelabel || ''
+	}
+	let after = {
+		image: data.afterimage,
+		label: data.afterlabel || ''
+	}
+
+	ReactDOM.render(
+		<Comprasion before={before} after={after} />,
+		el
+	)
+})
+
+document.querySelectorAll('.js-comprasion-home').forEach((el, i) => {
+	let data = el.dataset
+	let images = JSON.parse(data.images)
+
+	images = images.map((item) => ({
+		id: item.MIGX_id,
+		label: item.name,
+		image: item.image,
+		url: item.url
+	}))
+
+	ReactDOM.render(
+		<ComprasionHome images={images} />,
+		el
+	)
+})
+
+document.querySelectorAll('.js-calendar').forEach((el, i) => {
+	let events = el.dataset.events ? JSON.parse(el.dataset.events) : []
+	let date = el.dataset.date || ''
+	
+	ReactDOM.render(
+		<Calendar events={events} date={date} />,
+		el
+	)
+})
 
 
 /**

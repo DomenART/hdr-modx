@@ -29,7 +29,9 @@
             <ul class="uk-switcher js-internship-comprasion">
                 {foreach $_modx->resource['internship.comprasion'] | fromJSON as $item}
                     <li>
-                        <comprasion initial-before-image='{$item['image_before']}' initial-after-image='{$item['image_after']}'></comprasion>
+                        <div class="js-comprasion" 
+                        data-beforeImage='{$item["image_before"]}' 
+                        data-afterImage='{$item["image_after"]}'></div>
                         <div class="comprasion-review">
                             <div class="comprasion-review__title">
                                 {$item['title']}

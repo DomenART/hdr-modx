@@ -23,7 +23,7 @@ module.exports = {
 	module: {
 		rules: [{
 			test: /\.js$/,
-			// exclude: /(node_modules|bower_components)/,
+			exclude: /(node_modules|bower_components)/,
 			loader: 'babel-loader'
 		}, {
 			test: /\.vue$/,
@@ -88,7 +88,7 @@ module.exports = {
 
 	resolve: {
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js',
+			// 'vue$': 'vue/dist/vue.esm.js',
             'jquery': 'jquery/src/jquery'
 		}
 	},

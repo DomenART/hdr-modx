@@ -2,10 +2,9 @@
   "name": "hdr",
   "version": "1.0.0",
   "description": "> A Vue.js project",
-  "main": "gulpfile.js",
   "scripts": {
-    "dev": "WEBPACK_ENV=dev webpack --progress --colors --watch",
-    "build": "WEBPACK_ENV=production webpack"
+    "dev": "webpack -d --progress --colors --watch",
+    "build": "webpack -p"
   },
   "author": "",
   "license": "ISC",

@@ -51,7 +51,7 @@
 	</section>
 	<section class="section-comprasion">
 		<div class="uk-container">
-			<comprasion-home initial-images='{$_modx->resource.comprasion}'></comprasion-home>
+			<div class="js-comprasion-home" data-images='{$_modx->resource.comprasion}'></div>
 		</div>
 	</section>
 	<section class="section-directions">

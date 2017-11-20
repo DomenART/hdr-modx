@@ -15,7 +15,7 @@
 </header>
 <main class="page-main">
 	<div class="uk-container">
-		<calendar initial-events='{"eventsArray" | snippet}' initial-date="{$.get['date']}"></calendar>
+		<div class="js-calendar" data-events='{"eventsArray" | snippet}' data-date='{$.get["date"]}'></div>
 	    {'msProducts' | snippet : [
 	        'tpl' => '@FILE chunks/items/masterclass.tpl',
 	        'limit' => 0,
