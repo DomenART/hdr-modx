@@ -90,6 +90,10 @@
     </section>
 </footer>
 
+<div class="scrolltop" uk-scroll>
+    <span uk-icon="icon: chevron-up; ratio: 1.4"></span>
+</div>
+
 {'!AjaxForm@Form' | snippet : [
     'emailSubject'  => 'Заказ консультации',
     'validate'      => 'nomail:blank,email:email:required,conditions:required',

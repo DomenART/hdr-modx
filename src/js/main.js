@@ -109,6 +109,18 @@ if (toolbar) {
 }
 
 /**
+ * scrolltop
+ */
+window.addEventListener('scroll', (e) => {
+    let button = document.querySelector('.scrolltop')
+
+    if (window.scrollY > 300)
+        button.classList.add('scrolltop--visible')
+    else
+        button.classList.remove('scrolltop--visible')
+})
+
+/**
  * sticky slide bar
  */
 var slideBar = document.getElementById('slide-bar')

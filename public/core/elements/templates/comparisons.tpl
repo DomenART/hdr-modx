@@ -25,7 +25,7 @@
         ]}
     </div>
     {'page.nav' | placeholder}
-    {if ('page.total' | placeholder) > 5}
+    {if ('pageCount' | placeholder) > 1}
         <div class="paging">
             <span class="paging__inner">
                 <button type="button" class="uk-button button-framed js-paging-more">Показать ещё<span class="button-arrow"></span></button>

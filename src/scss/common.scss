@@ -1053,6 +1053,31 @@ label.uk-form-danger::after {
     padding-top: 40px;
 }
 
+.scrolltop {
+    position: fixed;
+    right: 0;
+    bottom: 100px;
+    transform: translateX(100%);
+    z-index: 999;
+    background-color: rgba(77,77,76,0.8);
+    cursor: pointer;
+    color: #ffffff;
+    transition: all .3s ease;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    &--visible {
+        transform: translateX(0);
+    }
+    &:hover {
+        background-color: rgba(77, 77, 76, 1);
+    }
+    @media (max-width: $breakpoint-small-max) {
+        bottom: 0;
+    }
+}
+
 .page-404-wrap {
     min-height: 100vh;
 }
