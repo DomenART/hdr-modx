@@ -25,11 +25,13 @@
         ]}
     </div>
     {'page.nav' | placeholder}
-    <div class="paging">
-        <span class="paging__inner">
-            <button type="button" class="uk-button button-framed js-paging-more">Показать ещё<span class="button-arrow"></span></button>
-            <button type="button" class="view-all js-paging-all">показать все</button>
-        </span>
-    </div>
+    {if ('page.total' | placeholder) > 5}
+        <div class="paging">
+            <span class="paging__inner">
+                <button type="button" class="uk-button button-framed js-paging-more">Показать ещё<span class="button-arrow"></span></button>
+                <button type="button" class="view-all js-paging-all">показать все</button>
+            </span>
+        </div>
+    {/if}
 </main>
 {/block}
