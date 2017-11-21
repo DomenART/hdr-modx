@@ -15,12 +15,12 @@
     </div>
 </header>
 <main class="page-main page-main--comparisons" id="pdopage">
-    <div class="rows uk-container">
+    <div class="rows comparison-list uk-container">
         {'!pdoPage' | snippet : [
             'includeTVs' => 'image_after,image_before',
             'tvPrefix' => '',
             'ajaxMode' => 'button',
-            'limit' => 1,
+            'limit' => 5,
             'tpl' => '@FILE chunks/items/comparison.tpl'
         ]}
     </div>
