@@ -111,6 +111,8 @@ class Calendar extends React.Component {
             )
         })
 
+        moment.locale('ru')
+
         return (
             <div className="calendar">
                 <div className="calendar-header">
