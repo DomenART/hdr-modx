@@ -8,6 +8,12 @@
 	background-color: #f7f7f4;
 }
 
+.page-header__text {
+  max-width: 795px;
+  margin: 60px auto;
+  text-align: center;
+}
+
 .page-main {
 	@include substrateGradient(#f7f7f4, #ffffff, 130px);
 	&--blog {
@@ -24,6 +30,9 @@
 	}
 	&--internship {
 		@include substrateGradient(#f7f7f4, #ffffff, 490px);
+	}
+	&--comparisons {
+		background: #4d4d4c;
 	}
 }
 
@@ -599,6 +608,9 @@
 #mse2_mfilter .btn_more {
 	display: none !important;
 }
+#pdopage .btn-more {
+	display: none !important;
+}
 
 .icon-vk,
 .icon-twitter,
@@ -764,10 +776,10 @@
 	-ms-user-select: none;
 	user-select: none;
 	&--before {
-		right: 0;
+		left: 0;
 	}
 	&--after {
-		left: 0;
+		right: 0;
 	}
 }
 
@@ -779,6 +791,10 @@
 	top: 0;
 	margin-left: -9px;
 	cursor: move;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 	&:hover {
 		&:after {
 			background-color: darken(#d3924d, 10%);
@@ -841,7 +857,6 @@
         color: #999999;
 	}
 	& + label.uk-form-danger {
-		background-color: #000000;
 		font-size: 12px;
 		font-style: normal;
 		line-height: 1.2;
@@ -860,12 +875,11 @@
 }
 .textarea-notebook {
 	padding: 3px 0 0;
-	background-color: transparent;
 	border-width: 0;
 	line-height: 40px;
 	font-size: 16px;
 	border-radius: 0;
-	background: url('../img/bg-textarea.png') 0 0 repeat;
+	background: transparent url('../img/bg-textarea.png') 0 0 repeat;
 	&:focus {
 		background-color: transparent;
 	}
@@ -882,7 +896,6 @@
         color: #999999;
 	}
 	& + label.uk-form-danger {
-		background-color: #000000;
 		font-size: 12px;
 		font-style: normal;
 		line-height: 1.2;
@@ -964,7 +977,6 @@ label.uk-form-danger::after {
     float: left;
     width: 14.2857%;
     color: #999999;
-    font-family: Rubik;
     font-size: 14px;
     font-weight: 400;
     text-align: center;
@@ -1013,7 +1025,6 @@ label.uk-form-danger::after {
 
 .calendar-header__title {
     color: #fefefe;
-    font-family: Rubik;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.08px;
@@ -1030,4 +1041,70 @@ label.uk-form-danger::after {
     top: 50%;
     transform: translateY(-50%);
 	cursor: pointer;
+}
+
+.comparison-item {
+    padding: 40px 0;
+    margin: 40px 0;
+    border-bottom: 1px solid #666;
+}
+
+.page-404-wrap {
+    min-height: 100vh;
+}
+
+.page-404-content {
+    text-align: center;
+    margin: 80px 0;
+}
+
+.page-404-content__code {
+    color: #000000;
+    font-size: 133px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.page-404-content__text {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 37px;
+}
+
+.page-404-content__back {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    display: inline-block;
+    border: 1px solid #666666;
+    line-height: 59px;
+    padding: 0 16px;
+    &:hover {
+        text-decoration: none;
+        color: #000000;
+    }
+    span {
+        transform: scaleX(-1);
+        margin-left: 0;
+        margin-right: 17px;
+        &::before {
+            background-color: #000;
+        }
+        &::after {
+            border-right-color: #000;
+            border-bottom-color: #000;
+        }
+    }
+}
+
+.page--404 {
+    .toolbar {
+        background-color: #f4f4f4;
+    }
 }

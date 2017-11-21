@@ -51,7 +51,7 @@
 	</section>
 	<section class="section-comprasion">
 		<div class="uk-container">
-			<div class="js-comprasion-home" data-images='{$_modx->resource.comprasion}'></div>
+			<div class="js-comparison-home" data-images='{$_modx->resource.comprasion}'></div>
 		</div>
 	</section>
 	<section class="section-directions">

@@ -13,53 +13,57 @@ import '../scss/main.scss'
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Comprasion from './components/comprasion'
-import ComprasionHome from './components/comprasion-home'
+import Comparison from './components/comparison'
+import ComparisonHome from './components/comparison-home'
 import Calendar from './components/calendar'
 
-document.querySelectorAll('.js-comprasion').forEach((el, i) => {
-	let data = el.dataset
-	let before = {
-		image: data.beforeimage,
-		label: data.beforelabel || ''
-	}
-	let after = {
-		image: data.afterimage,
-		label: data.afterlabel || ''
-	}
+renderReactComponents(document)
 
-	ReactDOM.render(
-		<Comprasion before={before} after={after} />,
-		el
-	)
-})
+function renderReactComponents(container) {
+    container.querySelectorAll('.js-comparison').forEach((el, i) => {
+        let data = el.dataset
+        let before = {
+            image: data.beforeimage,
+            label: data.beforelabel || ''
+        }
+        let after = {
+            image: data.afterimage,
+            label: data.afterlabel || ''
+        }
 
-document.querySelectorAll('.js-comprasion-home').forEach((el, i) => {
-	let data = el.dataset
-	let images = JSON.parse(data.images)
+        ReactDOM.render(
+            <Comparison before={before} after={after} />,
+            el
+        )
+    })
 
-	images = images.map((item) => ({
-		id: item.MIGX_id,
-		label: item.name,
-		image: item.image,
-		url: item.url
-	}))
+    container.querySelectorAll('.js-comparison-home').forEach((el, i) => {
+        let data = el.dataset
+        let images = JSON.parse(data.images)
 
-	ReactDOM.render(
-		<ComprasionHome images={images} />,
-		el
-	)
-})
+        images = images.map((item) => ({
+            id: item.MIGX_id,
+            label: item.name,
+            image: item.image,
+            url: item.url
+        }))
 
-document.querySelectorAll('.js-calendar').forEach((el, i) => {
-	let events = el.dataset.events ? JSON.parse(el.dataset.events) : []
-	let date = el.dataset.date || ''
-	
-	ReactDOM.render(
-		<Calendar events={events} date={date} />,
-		el
-	)
-})
+        ReactDOM.render(
+            <ComparisonHome images={images} />,
+            el
+        )
+    })
+
+    container.querySelectorAll('.js-calendar').forEach((el, i) => {
+        let events = el.dataset.events ? JSON.parse(el.dataset.events) : []
+        let date = el.dataset.date || ''
+
+        ReactDOM.render(
+            <Calendar events={events} date={date} />,
+            el
+        )
+    })
+}
 
 
 /**
@@ -207,21 +211,28 @@ var pagingMore = document.querySelector('.js-paging-more')
 var pagingAll = document.querySelector('.js-paging-all')
 
 if (pagingMore && pagingAll) {
+    const key = 'page'
+
 	pagingMore.addEventListener('click', () => {
-		mSearch2.addPage()
+		pdoPage.addPage(pdoPage.configs[key])
 	})
 
 	pagingAll.addEventListener('click', () => {
-		mSearch2.load({
-			page: 1,
-			limit: 9999 // bad
-		})
-	})
+        pdoPage.callbacks['after'] = function(config, response) {
+            document.querySelector(pdoPage.configs[key]['wrapper']).style.opacity = 1
+
+            if(response.page < response.pages) {
+                pdoPage.addPage(pdoPage.configs[key])
+            }
+        }
+        pdoPage.addPage(pdoPage.configs[key])
+    })
 
 	// hide the pagination section
-	$(document).on('pdopage_load', (e, response) => {
-		let section = document.querySelector('#pdoPage .paging')
-		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
+	$(document).on('pdopage_load', (e, config, response) => {
+		let section = document.querySelector(config.wrapper + ' .paging')
+		section.style.display = response.pages === response.page ? 'none' : 'block'
+        renderReactComponents(document.querySelector(config['wrapper']))
 	})
 }
 
@@ -246,7 +257,7 @@ if (ms2PagingMore && ms2PagingAll) {
 	// hide the pagination section
 	$(document).on('mse2_load', (e, response) => {
 		let section = document.querySelector('#mse2_mfilter .paging')
-		section.style.display = response.data.pages == response.data.page ? 'none' : 'block'
+		section.style.display = response.data.pages === response.data.page ? 'none' : 'block'
 	})
 }
 
@@ -261,41 +272,34 @@ if (article) {
 
 	tables.forEach(function(element) {
 		element.parentNode.insertBefore(div, element)
-		div.appendChild(element);
+		div.appendChild(element)
 		div.classList.add("article-table-wrapper","uk-overflow-auto")
-	});
+	})
 }
 
 /**
  * Likes in article
  */
 $('.js-like').click(function () {
-	var $el = $(this),
-		id = $(this).data('id'),
-		value = $(this).data('value');
+	let $el = $(this)
+	let id = $(this).data('id')
+	let value = $(this).data('value')
 
 	$.post('assets/template/action.php', {
 		action: "ticket/like",
 		id: id,
 		value: value
 	}, function (response) {
-		console.log(1);
-		response = JSON.parse(response);
+		response = JSON.parse(response)
 
 		if (response.success) {
-			if (value > 0) {
-				$el.text(response.rating.rating_plus);
-			}
-			else {
-				$el.text(response.rating.rating_minus);
-			}
-		}
-		else {
+			$el.text(response.rating[value > 0 ? 'rating_plus' : 'rating_minus'])
+		} else {
 			UIkit.notification({
 				message: response.message,
 				status: 'danger',
 				timeout: 5000
-			});
+			})
 		}
-	});
-});
+	})
+})

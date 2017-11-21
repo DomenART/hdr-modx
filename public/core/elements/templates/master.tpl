@@ -4,7 +4,7 @@
 	{include 'file:partials/head.tpl'}
 </head>
 <body>
-	<div id="app" class="wrapper">
+	<div class="wrapper">
 		{include 'file:partials/toolbar.tpl'}
 
 		{include 'file:partials/header.tpl'}

@@ -19,22 +19,21 @@ class Comprasion extends React.Component {
         this.resize = this.resize.bind(this)
     }
 
-    updateClip(coords) {
-        coords = coords || this.clipCoords()
-        this.afterImage.style.clip = "rect(0, " + coords.x + "px, " + coords.y + "px, 0)"
+    updateClip(x) {
+        x = x || this.getHandleCenter()
+
+        this.afterImage.style.clip = `rect(0, ${this.state.width}px, ${this.state.height}px, ${x}px)`
+
         this.setState({
-            hideBeforeLabel: coords.x > this.container.offsetWidth - this.beforeLabel.offsetWidth,
-            hideAfterLabel: this.afterLabel.offsetWidth > coords.x
+            hideBeforeLabel: x < this.beforeLabel.offsetWidth,
+            hideAfterLabel: this.container.offsetWidth - x < this.afterLabel.offsetWidth
         })
     }
 
-    clipCoords() {
+    getHandleCenter() {
         let left = this.handle.getBoundingClientRect().left - this.container.getBoundingClientRect().left
-
-        return {
-            x: left + (this.handle.offsetWidth / 2),
-            y: this.state.height
-        }
+        left += (this.handle.offsetWidth / 2)
+        return left
     }
     
     getParentSwitcher(el) {
@@ -74,10 +73,7 @@ class Comprasion extends React.Component {
 
         this.handle.style.left = left + 'px'
 
-        this.updateClip({
-            x: left,
-            y: this.state.height
-        })
+        this.updateClip(left)
     }
 
     componentDidMount() {
@@ -93,31 +89,32 @@ class Comprasion extends React.Component {
     render() {
         return (
             <div>
-                <div class="comprasion__arrows">
-                    <span></span>
-                    <span></span>
+                <div className="comprasion__arrows">
+                    <span />
+                    <span />
                 </div>
-                <figure ref={el => this.container = el} class="comprasion" style={{ width: this.state.width + 'px', height: this.state.height + 'px' }}>
-                    <div ref={el => this.beforeImage = el} class="comprasion__before" style={{ backgroundImage: 'url(' + this.props.before.image + ')' }}>
+                <figure ref={el => this.container = el} className="comprasion" style={{ width: this.state.width + 'px', height: this.state.height + 'px' }}>
+                    <div ref={el => this.beforeImage = el} className="comprasion__before" style={{ backgroundImage: 'url(' + this.props.before.image + ')' }}>
                     </div>
 
-                    <div ref={el => this.afterImage = el} class="comprasion__after" style={{ backgroundImage: 'url(' + this.props.after.image + ')' }}>
+                    <div ref={el => this.afterImage = el} className="comprasion__after" style={{ backgroundImage: 'url(' + this.props.after.image + ')' }}>
                     </div>
+
                     <span 
-                    ref={el => this.beforeLabel = el} 
-                    class="comprasion__label comprasion__label--before" 
+                    ref={el => this.beforeLabel = el}
+                    className="comprasion__label comprasion__label--before"
                     style={{ visibility: this.state.hideBeforeLabel ? 'hidden' : 'visible' }}>
                         {this.props.before.label}
                     </span>
 
                     <span 
-                    ref={el => this.afterLabel = el} 
-                    class="comprasion__label comprasion__label--after" 
+                    ref={el => this.afterLabel = el}
+                    className="comprasion__label comprasion__label--after"
                     style={{ visibility: this.state.hideAfterLabel ? 'hidden' : 'visible' }}>
                         {this.props.after.label}
                     </span>
 
-                    <span ref={el => this.handle = el} class="comprasion__handle" onMouseDown={this.down}></span>
+                    <span ref={el => this.handle = el} className="comprasion__handle" onMouseDown={this.down} />
                 </figure>
             </div>
         )

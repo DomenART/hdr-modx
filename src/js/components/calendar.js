@@ -40,8 +40,8 @@ class Calendar extends React.Component {
                 day: item.getDate(),
                 status: this.state.curMonth === item.getMonth()
             }
-            for (var index in this.props.events) {
-                if (tmpItem.date == index) {
+            for (let index in this.props.events) {
+                if (tmpItem.date === index) {
                     tmpItem.events = this.props.events[index]
                 }
             }
@@ -91,7 +91,7 @@ class Calendar extends React.Component {
     }
 
     render() {
-        const list = this.dayList().map((item, index) => {
+        const list = this.dayList().map((item) => {
             let classes = ['calendar-grid__item']
 
             if (item.events) classes.push('calendar-grid__item--events')
@@ -99,12 +99,12 @@ class Calendar extends React.Component {
                 classes.push('calendar-grid__item--inactive')
             else
                 classes.push('calendar-grid__item--active')
-            if (item.date == this.dateFormat(new Date())) classes.push('calendar-grid__item--today')
-            
+            if (item.date === this.dateFormat(new Date())) classes.push('calendar-grid__item--today')
+
             return (
                 <div
                     key={item.date}
-                    class={classes.join(' ')}
+                    className={classes.join(' ')}
                     onClick={() => this.loadEvents(item)}>
                     {item.day}
                 </div>
@@ -112,15 +112,15 @@ class Calendar extends React.Component {
         })
 
         return (
-            <div class="calendar">
-                <div class="calendar-header">
-                    <div class="calendar-header__left" onClick={this.prevMonth}></div>
-                    <div class="calendar-header__title">
+            <div className="calendar">
+                <div className="calendar-header">
+                    <div className="calendar-header__left" onClick={this.prevMonth}>&nbsp;</div>
+                    <div className="calendar-header__title">
                         {moment(this.getCurrentDate()).format("MMMM YYYY")}
                     </div>
-                    <div class="calendar-header__right" onClick={this.nextMonth}></div>
+                    <div className="calendar-header__right" onClick={this.nextMonth}>&nbsp;</div>
                 </div>
-                <div class="calendar-grid uk-clearfix">
+                <div className="calendar-grid uk-clearfix">
                     {list}
                 </div>
             </div>
