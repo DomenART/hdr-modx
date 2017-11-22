@@ -32,7 +32,7 @@
 <main>
 	<div class="uk-container">
 		<div class="project__category">
-			{$_modx->resource.parent |  resource: 'pagetitle'}
+			 {$_modx->resource.category | tvCategory}
 		</div>
 		<div class="project__text">
 			{$_modx->resource.content}

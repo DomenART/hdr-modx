@@ -24,7 +24,7 @@
 		'tpls' => '@FILE chunks/items/portfolio-item.tpl',
 		'filters' => 'publishedon:year,tv|category:default',
 		'suggestionsRadio' => 'resource|publishedon,tv|category',
-		'includeTVs' => 'image',
+		'includeTVs' => 'image,category',
 		'tplFilter.outer.resource|publishedon' => '@FILE chunks/filter/radio.tpl',
 		'tplFilter.row.resource|publishedon' => '@FILE chunks/filter/input.tpl',
 		'tplFilter.outer.tv|category' => '@FILE chunks/filter/category-select.tpl',

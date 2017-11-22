@@ -1,7 +1,7 @@
 <div class="article-promo__info uk-grid uk-grid-collapse uk-child-width-1-2@s uk-flex-middle">
     <div class="uk-flex uk-flex-middle">
         <time class="article-promo__date">{$publishedon | date_format : '%d.%m.%y'}</time>
-        <span class="article-promo__section">{$_modx->resource.category | join : ', '}</span>
+        <span class="article-promo__section">{$_modx->resource.category | tvCategory}</span>
     </div>
     <div class="uk-flex uk-flex-middle uk-flex-between uk-flex-wrap">
         <span class="article-promo__like js-like" data-id="{$id}" data-value="1">{$rating_plus}</span>

@@ -115,7 +115,7 @@
 					'parents' => 'page.portfolio' | config,
 					'sortby' => 'RAND()',
 					'tpl' => '@FILE chunks/items/portfolio-item.tpl',
-					'includeTVs' => 'image',
+					'includeTVs' => 'image,category',
 					'tvPrefix' => '',
 					'where' => ['class_key' => 'Ticket']
 				]}
