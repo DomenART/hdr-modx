@@ -3,6 +3,11 @@
         <div class="portfolio-item__image" style="background-image:url('{$image}')"></div>
         <span class="portfolio-item__title">{$pagetitle}</span>
         <span class="portfolio-item__line"></span>
-        <span class="portfolio-item__desc">{$category | tvCategory}</span>
+        <span class="portfolio-item__desc">
+            {'tvCategory' | snippet : [
+                'input' => $category,
+                'parent' => $parent
+            ]}
+        </span>
     </a>
 </div>

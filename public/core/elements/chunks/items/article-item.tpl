@@ -8,7 +8,12 @@
         <div class="uk-width-3-5@s">
             <div class="article-item__info">
                 <time class="article-item__date">{$publishedon | date_format: "%d.%m.%y"}</time>
-                <span class="article-item__category">{$category | tvCategory}</span>
+                <span class="article-item__category">
+                    {'tvCategory' | snippet : [
+                        'input' => $category,
+                        'parent' => $parent
+                    ]}
+                </span>
             </div>
             <a href="{$uri}" class="article-item__title">
                 {$pagetitle}
