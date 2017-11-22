@@ -16,12 +16,13 @@
 <main class="page-main">
 	<div class="uk-container">
 		<div class="js-calendar" data-events='{"eventsArray" | snippet}' data-date='{$.get["date"]}'></div>
-	    {'msProducts' | snippet : [
+	    {'pdoResources' | snippet : [
 	        'tpl' => '@FILE chunks/items/masterclass.tpl',
 	        'limit' => 0,
+	        'includeTVs' => 'price,date,duration,places,image',
+	        'tvPrefix' => '',
 			'sortby' => '{ "date":"DESC" }',
-			'optionFilters' => $.get['date'] ? '{ "date":"' ~ $.get['date'] ~ '" }' : '',
-			'sortbyOptions' => 'date:date'
+			'where' => $.get['date'] ? ['date' => $.get['date']] : []
 	    ]}
     </div>
 </main>
