@@ -22,7 +22,7 @@
 	        'includeTVs' => 'price,date,duration,places,image',
 	        'tvPrefix' => '',
 			'sortby' => '{ "date":"DESC" }',
-			'where' => $.get['date'] ? ['date' => $.get['date']] : []
+			'where' => $.get['date'] ? ['date:LIKE' => '%' ~ $.get['date'] ~ '%'] : []
 	    ]}
     </div>
 </main>
